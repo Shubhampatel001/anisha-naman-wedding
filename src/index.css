@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ivory text-gray-800 font-serif;
+
+  overflow-x: hidden;
+
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+video {
+  background-color: #F5F0E8;
+  backface-visibility: hidden;
+}
