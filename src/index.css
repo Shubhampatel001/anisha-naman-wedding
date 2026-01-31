@@ -21,3 +21,6 @@ video {
   background-color: #F5F0E8;
   backface-visibility: hidden;
 }
+h1, h2, h3 {
+  letter-spacing: 0.02em;
+}

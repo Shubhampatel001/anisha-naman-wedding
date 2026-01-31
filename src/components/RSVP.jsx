@@ -8,7 +8,7 @@ export default function RSVP() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = () => {
-    setTimeout(() => setSubmitted(true), 500);
+    setTimeout(() => setSubmitted(true), 600);
   };
 
   return (
@@ -17,22 +17,28 @@ export default function RSVP() {
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.3 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-3xl md:text-4xl font-serif text-primary mb-12 text-center"
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-3xl md:text-4xl font-serif mb-6"
         >
           RSVP
         </motion.h2>
 
         <p className="mb-12 text-white/80">
-          We would love to celebrate with you
+          Please let us know if you’ll be able to join us
         </p>
 
         {submitted ? (
           <p className="text-lg font-medium">Thank you for your response 💛</p>
         ) : (
           <>
-            {/* Hidden iframe to avoid redirect */}
+            {/* Hidden iframe prevents redirect */}
+            <iframe
+              name="hidden_iframe"
+              style={{ display: "none" }}
+              title="hidden_iframe"
+            />
+
             <form
               action={FORM_URL}
               method="POST"
@@ -40,9 +46,6 @@ export default function RSVP() {
               onSubmit={handleSubmit}
               className="space-y-6"
             >
-              {/* REQUIRED hidden submit field for Google Forms */}
-              <input type="hidden" name="submit" value="Submit" />
-
               <input
                 type="text"
                 name="entry.1882600194"
