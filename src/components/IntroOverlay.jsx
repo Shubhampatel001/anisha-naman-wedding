@@ -10,8 +10,18 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
     setClicked(true);
 
     const video = videoRef.current;
-    video.load();
-    video.play();
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      // slight delay prevents zoom-out jank on phones
+      setTimeout(() => {
+        video.load();
+        video.play();
+      }, 150);
+    } else {
+      video.load();
+      video.play();
+    }
 
     onStartMusic?.();
 
