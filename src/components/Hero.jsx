@@ -14,21 +14,25 @@ export default function Hero() {
             preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src="/Hero-bg-hug.webm" type="video/webm" />
-            <source src="/Hero-bg-hug.mp4" type="video/mp4" />
+            <source src="/Hero-bg-video.webm" type="video/webm" />
+            <source src="/Hero-bg-video.mp4" type="video/mp4" />
           </video>
         </div>
-
-        {/* Dark overlay for text contrast */}
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/40" />
       </div>
-
       {/* ===== Content ===== */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="relative z-10 text-center px-6 text-white"
+        className="
+    relative z-10 text-center px-6
+    bg-black/25 backdrop-blur-sm
+    rounded-2xl
+    py-10 md:py-12
+    max-w-2xl mx-auto
+    text-white
+  "
       >
         <p className="uppercase tracking-[0.3em] text-sm mb-6 text-white/80">
           We are getting married
