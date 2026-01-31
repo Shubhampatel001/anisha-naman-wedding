@@ -9,7 +9,10 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
     if (clicked) return;
     setClicked(true);
 
-    videoRef.current.play();
+    const video = videoRef.current;
+    video.load();
+    video.play();
+
     onStartMusic?.();
 
     setTimeout(onFinish, 3800);
@@ -36,8 +39,8 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
           ref={videoRef}
           muted
           playsInline
-          preload="auto"
-          poster="/intro-poster.png"
+          preload="none"
+          poster="/intro-poster.webp"
           className="
         absolute
         inset-0
