@@ -1,4 +1,5 @@
 import { MapPin, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Location() {
   const venueName = "Vanya Luxury Boutique Resort";
@@ -15,27 +16,47 @@ export default function Location() {
   return (
     <section className="py-20 md:py-28 bg-ivory">
       <div className="max-w-md md:max-w-lg lg:max-w-xl mx-auto px-6">
-        <div className="flex justify-center mb-10 md:mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 12, scale: 0.96 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ amount: 0.4 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+          }}
+          className="flex justify-center mb-10 md:mb-14"
+        >
           <img
             src="/wine.webp"
             alt="Wine"
             className="
-      w-20
-      sm:w-48
-      md:w-56
-      lg:w-64
+      w-16
+      sm:w-24
+      md:w-32
       opacity-90
       select-none
       pointer-events-none
     "
           />
-        </div>
-        <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="bg-white rounded-2xl shadow-md overflow-hidden"
+        >
           {/* Header */}
           <div className="p-8 text-center">
-            <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-sage/20 flex items-center justify-center">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ amount: 0.4 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="w-12 h-12 mx-auto mb-4 rounded-full bg-sage/20 flex items-center justify-center"
+            >
               <MapPin className="text-sage" />
-            </div>
+            </motion.div>
 
             <h3 className="text-lg font-serif text-primary mb-1">Location</h3>
 
@@ -47,48 +68,93 @@ export default function Location() {
           </div>
 
           {/* Venue Image */}
-          <div className="px-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 1.03 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ amount: 0.35 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="px-6"
+          >
             <img
               src="/venue.webp"
               alt={venueName}
               className="w-full h-52 md:h-60 object-cover rounded-xl"
             />
-          </div>
+          </motion.div>
 
           {/* Map */}
-          <div className="px-6 mt-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="px-6 mt-4"
+          >
             <div className="h-48 rounded-xl overflow-hidden">
               <iframe
                 title="Venue location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.3263766213413!2d77.5838816!3d13.1418012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19000bf4e111%3A0x3cfd58a3e012abc!2sVanya%20Luxury%20Boutique%20Resort!5e0!3m2!1sen!2sin!4v1769782677579!5m2!1sen!2sin"
                 className="w-full h-full border-0"
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Actions */}
-          <div className="p-6 space-y-3">
+          <div className="p-6 space-y-4">
             <a
               href={mapsLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-gray-50 text-sm hover:bg-gray-100 transition"
+              className="
+      group
+      flex items-center justify-center gap-3
+      w-full py-3 rounded-xl
+      bg-sage/10 text-sage
+      border border-sage/30
+      backdrop-blur-sm
+      shadow-sm
+      transition-all duration-300
+      hover:bg-sage/20 hover:shadow-md
+      active:scale-[0.98]
+    "
             >
-              <MapPin size={16} /> Open in Maps
+              <MapPin
+                size={16}
+                className="transition-transform duration-300 group-hover:-translate-y-0.5"
+              />
+              <span className="text-sm font-medium tracking-wide">
+                Open in Maps
+              </span>
             </a>
 
             <a
               href={calendarLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-gray-50 text-sm hover:bg-gray-100 transition"
+              className="
+      group
+      flex items-center justify-center gap-3
+      w-full py-3 rounded-xl
+      bg-primary/10 text-primary
+      border border-primary/30
+      backdrop-blur-sm
+      shadow-sm
+      transition-all duration-300
+      hover:bg-primary/20 hover:shadow-md
+      active:scale-[0.98]
+    "
             >
-              <Calendar size={16} /> Add to Calendar
+              <Calendar
+                size={16}
+                className="transition-transform duration-300 group-hover:-translate-y-0.5"
+              />
+              <span className="text-sm font-medium tracking-wide">
+                Add to Calendar
+              </span>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

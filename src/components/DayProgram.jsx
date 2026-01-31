@@ -48,7 +48,16 @@ export default function DayProgram() {
   return (
     <section className="py-24 bg-ivory">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="flex justify-center mb-10 md:mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 12, scale: 0.96 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ amount: 0.4 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+          }}
+          className="flex justify-center mb-10 md:mb-14"
+        >
           <img
             src="/wedding-illustration.png"
             alt="Wedding illustration"
@@ -62,7 +71,7 @@ export default function DayProgram() {
       pointer-events-none
     "
           />
-        </div>
+        </motion.div>
 
         {/* ---------- Section Heading ---------- */}
         <motion.div

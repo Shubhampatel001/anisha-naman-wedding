@@ -17,19 +17,36 @@ export default function RSVP() {
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-3xl md:text-4xl font-serif mb-6"
         >
           RSVP
         </motion.h2>
-
-        <p className="mb-12 text-white/80">
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-12 text-white/80"
+        >
           Please let us know if you’ll be able to join us
-        </p>
+        </motion.p>
 
         {submitted ? (
-          <p className="text-lg font-medium">Thank you for your response 💛</p>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-center space-y-2"
+          >
+            <p className="text-lg font-medium">
+              Thank you for your response 💛
+            </p>
+            <p className="text-sm text-white/70">
+              We can’t wait to celebrate together
+            </p>
+          </motion.div>
         ) : (
           <>
             {/* Hidden iframe prevents redirect */}
@@ -39,19 +56,28 @@ export default function RSVP() {
               title="hidden_iframe"
             />
 
-            <form
+            <motion.form
               action={FORM_URL}
               method="POST"
               target="hidden_iframe"
               onSubmit={handleSubmit}
-              className="space-y-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="space-y-5"
             >
               <input
                 type="text"
                 name="entry.1882600194"
                 placeholder="Your Name"
                 required
-                className="w-full px-4 py-3 rounded-lg text-gray-800"
+                className="
+      w-full px-4 py-3 rounded-xl
+      bg-white/90 text-gray-800
+      focus:outline-none focus:ring-2 focus:ring-primary/40
+      transition
+    "
               />
 
               <input
@@ -59,13 +85,23 @@ export default function RSVP() {
                 name="entry.1890372257"
                 placeholder="Phone Number"
                 required
-                className="w-full px-4 py-3 rounded-lg text-gray-800"
+                className="
+      w-full px-4 py-3 rounded-xl
+      bg-white/90 text-gray-800
+      focus:outline-none focus:ring-2 focus:ring-primary/40
+      transition
+    "
               />
 
               <select
                 name="entry.1439665661"
                 required
-                className="w-full px-4 py-3 rounded-lg text-gray-800"
+                className="
+      w-full px-4 py-3 rounded-xl
+      bg-white/90 text-gray-800
+      focus:outline-none focus:ring-2 focus:ring-primary/40
+      transition
+    "
               >
                 <option value="">Will you attend?</option>
                 <option value="Yes, happily!">Yes, happily!</option>
@@ -76,11 +112,18 @@ export default function RSVP() {
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-lg bg-primary text-white font-medium hover:opacity-90 transition"
+                className="
+      w-full py-3 rounded-xl
+      bg-primary text-white font-medium
+      shadow-md
+      transition-all duration-300
+      hover:shadow-lg hover:scale-[1.01]
+      active:scale-[0.98]
+    "
               >
                 Submit RSVP
               </button>
-            </form>
+            </motion.form>
           </>
         )}
       </div>

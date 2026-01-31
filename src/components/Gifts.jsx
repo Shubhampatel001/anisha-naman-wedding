@@ -30,11 +30,27 @@ export default function Gifts() {
         </motion.p>
 
         {/* Rings Illustration */}
-        <img
-          src="/rings.png"
-          alt="Wedding rings"
-          className="mx-auto mt-16 w-28 opacity-90"
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 12, scale: 0.96 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ amount: 0.4 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex justify-center mt-14 mb-10 md:mt-20 md:mb-14"
+        >
+          <img
+            src="/rings.png"
+            alt="Wedding rings"
+            className="
+      w-40           /* mobile */
+      sm:w-44
+      md:w-52        /* tablet */
+      lg:w-56        /* laptop */
+      opacity-90
+      select-none
+      pointer-events-none
+    "
+          />
+        </motion.div>
       </div>
     </section>
   );
