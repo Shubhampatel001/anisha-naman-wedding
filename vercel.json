@@ -1,11 +1,7 @@
 {
   "rewrites": [
-    { "source": "/assets/(.*)", "destination": "/assets/$1" },
-    { "source": "/(.*)\\.(js|css|png|jpg|jpeg|webp|mp4|webm|ico|svg|json)", "destination": "/$1.$2" },
-
     { "source": "/naman-anisha", "destination": "/naman-anisha.html" },
     { "source": "/anisha-naman", "destination": "/anisha-naman.html" },
-
     { "source": "/(.*)", "destination": "/" }
   ]
 }
