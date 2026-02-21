@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function Hero({ data }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ivory">
       {/* ===== Background Video Wrapper ===== */}
@@ -39,7 +39,7 @@ export default function Hero() {
         </p>
 
         <h1 className="text-5xl md:text-7xl font-serif mb-6">
-          Anisha <span className="text-sage">&</span> Naman
+          {data?.primary} <span className="text-sage">&</span> {data?.secondary}
         </h1>
 
         <p className="text-lg md:text-xl italic max-w-xl mx-auto mb-10 text-white/90">

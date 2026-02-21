@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { couples } from "./data/couples";
 
 import IntroOverlay from "./components/IntroOverlay";
 import MusicButton from "./components/MusicButton";
@@ -17,6 +18,9 @@ import SectionDivider from "./components/SectionDivider";
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
   const musicRef = useRef(null);
+  const path = window.location.pathname.replace(/^\/|\/$/g, "");
+
+  const data = couples[path] || couples["naman-anisha"]; // default
 
   return (
     <>
@@ -32,7 +36,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* Main content always rendered behind */}
-      <Hero animate={!showIntro} />
+      <Hero animate={!showIntro} data={data} />
       <Countdown />
       <Location />
       <SectionDivider />
@@ -44,7 +48,7 @@ export default function App() {
       <SectionDivider />
       <Gifts />
       <RSVP />
-      <Footer />
+      <Footer data={data} />
     </>
   );
 }

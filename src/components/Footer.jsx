@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function Footer() {
+export default function Footer({ data }) {
   return (
     <footer className="py-20 bg-ivory text-center">
       <motion.div
@@ -19,12 +19,12 @@ export default function Footer() {
 
         {/* Names */}
         <h3 className="text-2xl font-serif text-primary mb-2 tracking-wide">
-          Anisha & Naman
+          {data?.names}
         </h3>
 
         {/* Hashtag */}
         <p className="text-xs tracking-[0.3em] text-sage mb-4">
-          #AnishaWedsNaman
+          #{data?.primary}Weds{data?.secondary}
         </p>
 
         {/* Closing line */}
