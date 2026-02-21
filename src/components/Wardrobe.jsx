@@ -1,22 +1,10 @@
 import { motion } from "framer-motion";
 
 const dressThemes = [
-  {
-    event: "Mehendi",
-    theme: "Green",
-  },
-  {
-    event: "Haldi",
-    theme: "Yellow",
-  },
-  {
-    event: "Sangeet",
-    theme: "Indo-Western",
-  },
-  {
-    event: "Wedding",
-    theme: "Traditional",
-  },
+  { event: "Mehendi", theme: "Green", color: "#9CAF88" },
+  { event: "Haldi", theme: "Yellow", color: "#E7C75F" },
+  { event: "Sangeet", theme: "Indo-Western", color: "#8B5E3C" },
+  { event: "Wedding", theme: "Traditional", color: "#B76E79" },
 ];
 
 export default function Wardrobe() {
@@ -55,6 +43,10 @@ export default function Wardrobe() {
               transition={{ delay: i * 0.06 }}
               className="rounded-2xl bg-white/70 backdrop-blur-sm p-5 shadow-sm ring-1 ring-sage/15"
             >
+              {/* <div
+                className="w-10 h-10 rounded-full mx-auto mb-3 shadow-sm"
+                style={{ backgroundColor: item.color }}
+              /> */}
               <p className="text-sm text-gray-500 mb-1">{item.event}</p>
               <p className="font-serif text-primary text-lg">{item.theme}</p>
             </motion.div>
