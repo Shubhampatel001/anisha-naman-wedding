@@ -40,10 +40,10 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
       {/* Video wrapper */}
       <div
         className="
-      absolute inset-0
-      scale-[1.25]
-      md:scale-100
-      transform-gpu"
+          absolute inset-0
+          scale-[1.25]
+          md:scale-100
+          transform-gpu"
       >
         <video
           ref={videoRef}
@@ -52,11 +52,11 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
           preload="none"
           poster="/intro-poster1.webp"
           className="
-        absolute
-        inset-0
-        w-full h-full
-        object-cover
-      "
+            absolute
+            inset-0
+            w-full h-full
+            object-cover
+          "
         >
           <source src="/intro-envelop1.webm" type="video/webm" />
           <source src="/intro-envelop1.mp4" type="video/mp4" />

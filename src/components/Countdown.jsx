@@ -8,14 +8,14 @@ function getTimeLeft() {
   const diff = WEDDING_DATE - now;
 
   if (diff <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return { days: 0, hours: 0, mins: 0, secs: 0 };
   }
 
   return {
     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
     hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((diff / (1000 * 60)) % 60),
-    seconds: Math.floor((diff / 1000) % 60),
+    mins: Math.floor((diff / (1000 * 60)) % 60),
+    secs: Math.floor((diff / 1000) % 60),
   };
 }
 
@@ -106,20 +106,6 @@ export default function Countdown() {
             <div className="flex justify-center">
               <FlipDigit value={value} />
             </div>
-            {/* <AnimatePresence mode="popLayout">
-                <motion.span
-                  key={value}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="inline-block"
-                >
-                  {value}
-                </motion.span>
-              </AnimatePresence>
-            </div> */}
-
             {/* Label */}
             <div className="uppercase text-[11px] tracking-[0.25em] mt-2 text-white/80">
               {label}

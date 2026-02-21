@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Hero({ data }) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ivory">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ivory">
       {/* ===== Background Video Wrapper ===== */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 scale-[1.15] md:scale-100 transform-gpu">
@@ -26,19 +26,19 @@ export default function Hero({ data }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
         className="
-    relative z-10 text-center px-6
-    bg-black/25 backdrop-blur-sm
-    rounded-2xl
-    py-10 md:py-12
-    max-w-2xl mx-auto
-    text-white
-  "
+          relative z-10 text-center px-6
+          bg-black/25 backdrop-blur-sm
+          rounded-2xl
+          py-8 md:py-12
+          max-w-2xl mx-auto
+          text-white
+        "
       >
         <p className="uppercase tracking-[0.3em] text-sm mb-6 text-white/80">
           We are getting married
         </p>
 
-        <h1 className="text-5xl md:text-7xl font-serif mb-6">
+        <h1 className="text-4xl md:text-7xl font-serif mb-6">
           {data?.primary} <span className="text-sage/70">&</span>{" "}
           {data?.secondary}
         </h1>
@@ -59,9 +59,60 @@ export default function Hero({ data }) {
       </motion.div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 text-xs animate-bounce">
-        Scroll
-      </div>
+      <motion.button
+        onClick={() =>
+          document.getElementById("countdown")?.scrollIntoView({
+            behavior: "smooth",
+          })
+        }
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.4, duration: 0.9 }}
+        className="
+          absolute bottom-12 md:bottom-14
+          inset-x-0
+          mx-auto
+          w-max
+          z-20
+          flex flex-col items-center gap-2
+          text-white/85 cursor-pointer group
+        "
+      >
+        {/* Text */}
+        {/* <span className="text-[10px] tracking-[0.38em] uppercase text-white/75">
+          Scroll
+        </span> */}
+        {/* Arrow circle */}
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="
+            w-10 h-10
+            rounded-full
+            border border-white/30
+            bg-white/10
+            backdrop-blur-md
+            flex items-center justify-center
+            shadow-[0_8px_30px_rgba(0,0,0,0.25)]
+            group-hover:bg-white/15
+            transition
+          "
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M6 9l6 6 6-6"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </motion.div>
+      </motion.button>
     </section>
   );
 }
