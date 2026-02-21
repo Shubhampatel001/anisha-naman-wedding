@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        ivory: "#FAF7F2",
+        ivory: "#EFE7DA",
         sage: "#9CAF88",
         "sage-dark": "#7D8F6A",
         primary: "#8B5E3C",

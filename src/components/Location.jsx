@@ -27,8 +27,8 @@ export default function Location() {
           className="flex justify-center mb-10 md:mb-14"
         >
           <img
-            src="/wine.webp"
-            alt="Wine"
+            src="/mandap.png"
+            alt="mandap"
             className="
       w-16
       sm:w-24

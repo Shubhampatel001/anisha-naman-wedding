@@ -50,7 +50,10 @@ export default function Countdown() {
   }, []);
 
   return (
-    <section id="countdown" className="py-28 bg-sage text-white text-center">
+    <section
+      id="countdown"
+      className="py-28 bg-sage text-white text-center overflow-x-hidden"
+    >
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 16 }}
@@ -68,16 +71,16 @@ export default function Countdown() {
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.3 }}
-        className="grid grid-cols-2 gap-4 sm:flex sm:justify-center sm:gap-6"
+        className="flex justify-center gap-2 sm:gap-6 px-4 max-w-full overflow-hidden"
       >
         {Object.entries(timeLeft).map(([label, value]) => (
           <motion.div
             key={label}
             variants={card}
-            className="relative bg-white/15 backdrop-blur-lg px-7 py-5 rounded-2xl min-w-[96px]"
+            className="relative flex-1 basis-0 min-w-0 bg-white/20 backdrop-blur-lg px-2 sm:px-6 py-4 sm:py-5 rounded-2xl"
           >
             {/* Animated number */}
-            <div className="text-3xl font-semibold tracking-tight">
+            <div className="text-xl sm:text-3xl font-semibold tracking-tight">
               <AnimatePresence mode="popLayout">
                 <motion.span
                   key={value}
