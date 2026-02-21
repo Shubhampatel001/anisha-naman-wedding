@@ -1,8 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ],
-   "routes": [
+  "routes": [
     { "src": "^/naman-anisha/?$", "dest": "/naman-anisha.html" },
     { "src": "^/anisha-naman/?$", "dest": "/anisha-naman.html" },
     { "src": "/(.*)", "dest": "/index.html" }
