@@ -2,7 +2,7 @@ export const events = [
   {
     day: "Day 1",
     date: "18 April 2026",
-    title: "Pre-Wedding Rituals",
+    title: "Mehendi Ceremony",
     schedule: [
       {
         title: "Mehendi",
@@ -12,16 +12,17 @@ export const events = [
       },
     ],
   },
+
   {
     day: "Day 2",
     date: "19 April 2026",
-    title: "Celebrations",
+    title: "Festive Celebrations",
     schedule: [
       {
-        title: "Haldi",
+        title: "Myra",
         time: "10:00",
-        icon: "haldi",
-        desc: "Auspicious turmeric ritual",
+        icon: "garland", // reuse existing icon
+        desc: "Traditional Myra ceremony with family rituals",
       },
       {
         title: "Sangeet",
@@ -31,12 +32,19 @@ export const events = [
       },
     ],
   },
+
   {
-    day: "Wedding Day",
-  date: "20 April 2026",
-  title: "The Sacred Union",
-  isMain: true,
+    day: "Day 3",
+    date: "20 April 2026",
+    title: "The Sacred Union",
+    isMain: true,
     schedule: [
+      {
+        title: "Haldi",
+        time: "10:00",
+        icon: "haldi",
+        desc: "Auspicious turmeric ritual",
+      },
       {
         title: "Varmala",
         time: "18:30",

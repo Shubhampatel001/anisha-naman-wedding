@@ -3,6 +3,14 @@ import { Flower2, Music, Flame, HeartHandshake } from "lucide-react";
 import { events } from "../data/events";
 import { motion } from "framer-motion";
 
+const dressThemes = {
+  mehendi: { label: "Green Attire", color: "#9CAF88" },
+  haldi: { label: "Yellow Attire", color: "#E7C75F" },
+  music: { label: "Indo-Western", color: "#8B5E3C" },
+  garland: { label: "Traditional Attire", color: "#B76E79" },
+  fire: { label: "Traditional Attire", color: "#B76E79" },
+};
+
 /* ---------- Animation presets (premium & subtle) ---------- */
 
 const container = {
@@ -115,10 +123,11 @@ export default function DayProgram() {
 `}
             >
               {/* Day Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-10">
                 <p className="uppercase tracking-widest text-xs text-sage">
                   {day.day} · {day.date}
                 </p>
+
                 <h3 className="text-2xl font-serif text-primary mt-2">
                   {day.title}
                 </h3>
@@ -160,7 +169,19 @@ export default function DayProgram() {
                         <h4 className="font-medium text-gray-800">
                           {item.title}
                         </h4>
-
+                        {/* Theme pill per function */}
+                        {dressThemes[item.icon] && (
+                          <span
+                            className="inline-block mt-1 px-3 py-1 rounded-full text-[10px] font-medium"
+                            style={{
+                              backgroundColor: `${dressThemes[item.icon].color}18`,
+                              color: dressThemes[item.icon].color,
+                              border: `1px solid ${dressThemes[item.icon].color}40`,
+                            }}
+                          >
+                            ✦ {dressThemes[item.icon].label}
+                          </span>
+                        )}
                         {/* Description */}
                         <p className="text-sm text-gray-500 mt-1 max-w-[260px]">
                           {item.desc}
@@ -200,16 +221,26 @@ export default function DayProgram() {
                         >
                           <Icon size={20} />
                         </motion.div>
-                        <br></br>
                         {/* Time */}
                         <span className="text-xs px-3 py-1 rounded-full bg-sage/15 text-sage mb-2">
                           {item.time}
                         </span>
-                        <br></br>
                         {/* Title */}
                         <h4 className="font-medium text-gray-800">
                           {item.title}
                         </h4>
+                        {dressThemes[item.icon] && (
+                          <span
+                            className="inline-block mt-2 px-3 py-1 rounded-full text-[10px] font-medium"
+                            style={{
+                              backgroundColor: `${dressThemes[item.icon].color}18`,
+                              color: dressThemes[item.icon].color,
+                              border: `1px solid ${dressThemes[item.icon].color}40`,
+                            }}
+                          >
+                            ✦ {dressThemes[item.icon].label}
+                          </span>
+                        )}
                         {/* Description */}
                         <p className="text-sm text-gray-500 mt-1 leading-relaxed">
                           {item.desc}

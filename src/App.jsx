@@ -7,11 +7,11 @@ import MusicButton from "./components/MusicButton";
 import Hero from "./components/Hero";
 import Countdown from "./components/Countdown";
 import DayProgram from "./components/DayProgram";
-import Wardrobe from "./components/Wardrobe";
+// import Wardrobe from "./components/Wardrobe";
 import Location from "./components/Location";
 import RSVP from "./components/RSVP";
 import Footer from "./components/Footer";
-import FAQ from "./components/FAQ";
+// import FAQ from "./components/FAQ";
 import Gifts from "./components/Gifts";
 import SectionDivider from "./components/SectionDivider";
 
@@ -35,17 +35,16 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Main content always rendered behind */}
       <Hero animate={!showIntro} data={data} />
       <Countdown />
       <Location />
       <SectionDivider />
-      <Wardrobe />
-      <SectionDivider />
+      {/* <Wardrobe />
+      <SectionDivider /> */}
       <DayProgram />
       <SectionDivider />
-      <FAQ />
-      <SectionDivider />
+      {/* <FAQ />
+      <SectionDivider /> */}
       <Gifts />
       <RSVP />
       <Footer data={data} />
