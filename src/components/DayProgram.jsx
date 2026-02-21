@@ -70,14 +70,14 @@ export default function DayProgram() {
             src="/wedding-illustration.png"
             alt="Wedding illustration"
             className="
-      w-40
-      sm:w-48
-      md:w-56
-      lg:w-64
-      opacity-90
-      select-none
-      pointer-events-none
-    "
+              w-40
+              sm:w-48
+              md:w-56
+              lg:w-64
+              opacity-90
+              select-none
+              pointer-events-none
+            "
           />
         </motion.div>
 
