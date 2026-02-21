@@ -14,7 +14,7 @@ export default function RSVP() {
   };
 
   return (
-    <section id="rsvp" className="py-24 bg-sage-dark text-white">
+    <section id="rsvp" className="py-24 bg-[#7F9F8C] text-white">
       <div className="max-w-xl mx-auto px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}

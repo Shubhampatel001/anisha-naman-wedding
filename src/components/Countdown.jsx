@@ -75,7 +75,7 @@ export default function Countdown() {
   return (
     <section
       id="countdown"
-      className="py-28 bg-sage text-white text-center overflow-x-hidden"
+      className="py-28 bg-[#9FB8A8] text-white text-center overflow-x-hidden"
     >
       {/* Heading */}
       <motion.h2
@@ -106,6 +106,20 @@ export default function Countdown() {
             <div className="flex justify-center">
               <FlipDigit value={value} />
             </div>
+            {/* <AnimatePresence mode="popLayout">
+                <motion.span
+                  key={value}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className="inline-block"
+                >
+                  {value}
+                </motion.span>
+              </AnimatePresence>
+            </div> */}
+
             {/* Label */}
             <div className="uppercase text-[11px] tracking-[0.25em] mt-2 text-white/80">
               {label}
