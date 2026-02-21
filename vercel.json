@@ -1,12 +1,7 @@
 {
-  "routes": [
-    { "src": "^/assets/(.*)", "dest": "/assets/$1" },
-    { "src": "^/intro-poster.webp$", "dest": "/intro-poster.webp" },
-    { "src": "^/favicon(.*)", "dest": "/favicon$1" },
-
-    { "src": "^/naman-anisha/?$", "dest": "/naman-anisha.html" },
-    { "src": "^/anisha-naman/?$", "dest": "/anisha-naman.html" },
-
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/naman-anisha", "destination": "/naman-anisha.html" },
+    { "source": "/anisha-naman", "destination": "/anisha-naman.html" },
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
