@@ -50,7 +50,7 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
           muted
           playsInline
           preload="none"
-          poster="/intro-poster.webp"
+          poster="/intro-poster1.webp"
           className="
         absolute
         inset-0
@@ -58,8 +58,8 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
         object-cover
       "
         >
-          <source src="/intro-envelope.webm" type="video/webm" />
-          <source src="/intro-envelope.mp4" type="video/mp4" />
+          <source src="/intro-envelop1.webm" type="video/webm" />
+          <source src="/intro-envelop1.mp4" type="video/mp4" />
         </video>
       </div>
     </motion.div>

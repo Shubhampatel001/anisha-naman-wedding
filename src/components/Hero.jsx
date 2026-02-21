@@ -39,12 +39,19 @@ export default function Hero({ data }) {
         </p>
 
         <h1 className="text-5xl md:text-7xl font-serif mb-6">
-          {data?.primary} <span className="text-sage">&</span> {data?.secondary}
+          {data?.primary} <span className="text-sage/70">&</span>{" "}
+          {data?.secondary}
         </h1>
 
-        <p className="text-lg md:text-xl italic max-w-xl mx-auto mb-10 text-white/90">
-          Two hearts. One promise. A lifetime together.
-        </p>
+        <div className="max-w-xl mx-auto mb-10 text-center">
+          <p className="mt-4 text-2xl md:text-3xl font-serif tracking-[0.06em] text-white/95">
+            एकत्वं अनन्तत्वम्
+          </p>
+
+          <p className="mt-3 text-sm md:text-base italic text-white/90">
+            Two hearts. One promise. A lifetime together.
+          </p>
+        </div>
 
         <div className="w-20 h-px bg-white/60 mx-auto mb-10" />
 

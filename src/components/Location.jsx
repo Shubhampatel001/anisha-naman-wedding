@@ -30,18 +30,18 @@ export default function Location() {
             src="/mandap.png"
             alt="mandap"
             className="
-    w-full
-    max-w-[120px]
-    sm:max-w-[150px]
-    md:max-w-[180px]
-    lg:max-w-[200px]
-    h-auto
-    mx-auto
-    opacity-90
-    drop-shadow-[0_6px_16px_rgba(0,0,0,0.10)]
-    select-none
-    pointer-events-none
-  "
+              w-full
+              max-w-[120px]
+              sm:max-w-[150px]
+              md:max-w-[180px]
+              lg:max-w-[200px]
+              h-auto
+              mx-auto
+              opacity-90
+              drop-shadow-[0_6px_16px_rgba(0,0,0,0.10)]
+              select-none
+              pointer-events-none
+            "
           />
         </motion.div>
         <motion.div
