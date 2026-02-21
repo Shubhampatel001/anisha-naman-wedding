@@ -38,7 +38,30 @@ const card = {
     transition: { duration: 0.6, ease: "easeOut" },
   },
 };
-
+function FlipDigit({ value }) {
+  return (
+    <div className="relative">
+      <AnimatePresence mode="popLayout">
+        <motion.span
+          key={value}
+          initial={{ opacity: 0, y: 12, scale: 0.92 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -12, scale: 0.92 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="
+            block
+            text-4xl sm:text-5xl md:text-6xl
+            font-serif font-semibold
+            text-white
+            tracking-tight
+          "
+        >
+          {String(value).padStart(2, "0")}
+        </motion.span>
+      </AnimatePresence>
+    </div>
+  );
+}
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
 
@@ -71,17 +94,19 @@ export default function Countdown() {
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.3 }}
-        className="flex justify-center gap-2 sm:gap-6 px-4 max-w-full overflow-hidden"
+        className="flex justify-center gap-3 sm:gap-8 md:gap-10 px-4 max-w-full overflow-hidden"
       >
         {Object.entries(timeLeft).map(([label, value]) => (
           <motion.div
             key={label}
             variants={card}
-            className="relative flex-1 basis-0 min-w-0 bg-white/20 backdrop-blur-lg px-2 sm:px-6 py-4 sm:py-5 rounded-2xl"
+            className="relative flex-1 basis-0 min-w-0 bg-white/10 backdrop-blur-xl border border-white/20 px-4 sm:px-8 py-6 sm:py-7 rounded-2xl"
           >
             {/* Animated number */}
-            <div className="text-xl sm:text-3xl font-semibold tracking-tight">
-              <AnimatePresence mode="popLayout">
+            <div className="flex justify-center">
+              <FlipDigit value={value} />
+            </div>
+            {/* <AnimatePresence mode="popLayout">
                 <motion.span
                   key={value}
                   initial={{ opacity: 0, y: 10 }}
@@ -93,7 +118,7 @@ export default function Countdown() {
                   {value}
                 </motion.span>
               </AnimatePresence>
-            </div>
+            </div> */}
 
             {/* Label */}
             <div className="uppercase text-[11px] tracking-[0.25em] mt-2 text-white/80">
