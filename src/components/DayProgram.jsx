@@ -125,17 +125,17 @@ export default function DayProgram() {
               </div>
 
               {/* Timeline */}
-              {/* ===== MOBILE CENTERED TIMELINE ===== */}
-              <div className="md:hidden relative flex flex-col items-center">
-                {/* Vertical line */}
-                <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-sage/20" />
+              {/* ===== MOBILE ELEGANT TIMELINE ===== */}
+              <div className="md:hidden relative">
+                {/* Center vertical line */}
+                <div className="absolute top-0 bottom-0 left-6 w-px bg-sage/25" />
 
                 <motion.ul
                   variants={container}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ amount: 0.3 }}
-                  className="space-y-10 w-full"
+                  className="space-y-10"
                 >
                   {day.schedule.map((item, i) => {
                     const Icon = iconMap[item.icon];
@@ -144,15 +144,15 @@ export default function DayProgram() {
                       <motion.li
                         key={i}
                         variants={fadeUp}
-                        className="flex flex-col items-center text-center relative"
+                        className="relative pl-16"
                       >
-                        {/* Icon */}
-                        <div className="relative z-10 w-12 h-12 rounded-full bg-ivory border border-sage/40 flex items-center justify-center text-sage mb-3">
+                        {/* Icon circle */}
+                        <div className="absolute left-0 top-1 z-10 w-12 h-12 rounded-full bg-ivory border border-sage/40 flex items-center justify-center text-sage">
                           <Icon size={18} />
                         </div>
 
                         {/* Time */}
-                        <span className="inline-block text-xs px-3 py-1 rounded-full bg-sage/15 text-sage mb-2">
+                        <span className="block text-xs tracking-wide text-sage mb-1">
                           {item.time}
                         </span>
 

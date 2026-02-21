@@ -6,6 +6,8 @@ const FORM_URL =
 
 export default function RSVP() {
   const [submitted, setSubmitted] = useState(false);
+  const [attendance, setAttendance] = useState("");
+  const [open, setOpen] = useState(false);
 
   const handleSubmit = () => {
     setTimeout(() => setSubmitted(true), 600);
@@ -60,7 +62,13 @@ export default function RSVP() {
               action={FORM_URL}
               method="POST"
               target="hidden_iframe"
-              onSubmit={handleSubmit}
+              onSubmit={(e) => {
+                if (!attendance) {
+                  e.preventDefault();
+                  return;
+                }
+                handleSubmit();
+              }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ amount: 0.3 }}
@@ -93,22 +101,77 @@ export default function RSVP() {
     "
               />
 
-              <select
-                name="entry.1439665661"
-                required
-                className="
+              {/* Hidden input for Google Forms */}
+              <input type="hidden" name="entry.1439665661" value={attendance} />
+
+              {/* Custom dropdown */}
+              <div className="relative text-left">
+                <button
+                  type="button"
+                  onClick={() => setOpen((o) => !o)}
+                  className="
       w-full px-4 py-3 rounded-xl
-      bg-white/90 text-gray-800
+      bg-white/95 text-gray-800
+      border border-white/40 shadow-sm
+      flex items-center justify-between
       focus:outline-none focus:ring-2 focus:ring-primary/40
-      transition
+      transition-all duration-200
     "
-              >
-                <option value="">Will you attend?</option>
-                <option value="Yes, happily!">Yes, happily!</option>
-                <option value="Sorry, can’t make it">
-                  Sorry, can’t make it
-                </option>
-              </select>
+                >
+                  <span
+                    className={attendance ? "font-medium" : "text-gray-400"}
+                  >
+                    {attendance || "Will you attend?"}
+                  </span>
+
+                  <svg
+                    className={`w-4 h-4 text-gray-500 transition-transform ${
+                      open ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                {/* Dropdown panel */}
+                {open && (
+                  <div
+                    className="
+        absolute z-20 mt-2 w-full
+        rounded-xl bg-white
+        shadow-lg ring-1 ring-black/5
+        overflow-hidden
+      "
+                  >
+                    {["Yes, happily!", "Sorry, can’t make it"].map((option) => (
+                      <button
+                        key={option}
+                        type="button"
+                        onClick={() => {
+                          setAttendance(option);
+                          setOpen(false);
+                        }}
+                        className="
+            w-full text-left px-4 py-3
+            text-gray-700
+            hover:bg-sage/10
+            transition-colors
+          "
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               <button
                 type="submit"

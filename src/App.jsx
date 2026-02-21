@@ -6,6 +6,7 @@ import MusicButton from "./components/MusicButton";
 import Hero from "./components/Hero";
 import Countdown from "./components/Countdown";
 import DayProgram from "./components/DayProgram";
+import Wardrobe from "./components/Wardrobe";
 import Location from "./components/Location";
 import RSVP from "./components/RSVP";
 import Footer from "./components/Footer";
@@ -34,6 +35,8 @@ export default function App() {
       <Hero animate={!showIntro} />
       <Countdown />
       <Location />
+      <SectionDivider />
+      <Wardrobe />
       <SectionDivider />
       <DayProgram />
       <SectionDivider />
