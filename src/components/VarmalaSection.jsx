@@ -98,7 +98,9 @@ export default function VarmalaSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ amount: 0.35 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-center md:text-left order-2"
+            className="text-center 
+            md:text-left 
+            order-2"
           >
             {/* 📅 Day + Date */}
             <p className="uppercase tracking-[0.35em] text-[11px] text-rose-600/80 mb-2">
