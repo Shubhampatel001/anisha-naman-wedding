@@ -20,6 +20,7 @@ import MyraSection from "./components/MyraSection";
 import PheraSection from "./components/PheraSection";
 import SangeetSection from "./components/SangeetSection";
 import VarmalaSection from "./components/VarmalaSection";
+// import BackToTimeline from "./components/BackToTimeline";
 import SectionDivider from "./components/SectionDivider";
 
 export default function App() {
