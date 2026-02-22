@@ -24,7 +24,11 @@ export default function Hero({ data }) {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        transition={{
+          duration: 1.2,
+          ease: [0.22, 1, 0.36, 1],
+          delay: 0.25, // ⭐ important
+        }}
         className="
           relative z-10 text-center px-6
           bg-black/25 backdrop-blur-sm

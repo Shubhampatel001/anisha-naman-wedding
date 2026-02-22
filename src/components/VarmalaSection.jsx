@@ -48,8 +48,8 @@ export default function VarmalaSection() {
             ))}
           </div>
           {/* 🌺 subtle garland swing */}
-          <motion.img
-            src="/garland.png"
+          {/* <motion.img
+            // src="/garland.png"
             animate={{ rotate: [-2, 2, -2] }}
             transition={{
               duration: 4,
@@ -65,7 +65,7 @@ export default function VarmalaSection() {
     opacity-70
     pointer-events-none
   "
-          />
+          /> */}
           {/* Illustration (LEFT) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}

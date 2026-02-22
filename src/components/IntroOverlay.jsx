@@ -20,7 +20,11 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
 
     const timer = setTimeout(playVideo, 120);
 
-    const handleEnded = () => onFinish?.();
+    const handleEnded = () => {
+      setTimeout(() => {
+        onFinish?.();
+      }, 500); //  gives hero time to breathe
+    };
     video.addEventListener("ended", handleEnded);
 
     return () => {
@@ -37,9 +41,14 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[100] overflow-hidden"
-      animate={{ backgroundColor: started ? "#ffffff" : "#F5F0E8" }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="fixed inset-0 z-[100] overflow-hidden bg-[#F5F0E8]"
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{
+        duration: 1.1,
+        ease: [0.22, 1, 0.36, 1],
+      }}
     >
       {/* ================= VIDEO ================= */}
 
@@ -52,13 +61,13 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
         {started && (
           <motion.div
             key="video"
-            initial={{ opacity: 0, scale: 1.08 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
             className="absolute inset-0"
           >
-            <div className="absolute inset-0 flex items-center justify-center bg-white">
+            <div className="absolute inset-0 flex items-center justify-center bg-[#F5F0E8]">
               <video
                 ref={videoRef}
                 muted
