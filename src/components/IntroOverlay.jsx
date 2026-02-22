@@ -68,9 +68,8 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
                 className="
                     w-full
                     h-full
-                    object-contain
-                    md:object-cover
-                  "
+                    object-cover
+                    "
               >
                 <source src="/intro-logo.webm" type="video/webm" />
                 <source src="/intro-logo.mp4" type="video/mp4" />
@@ -133,11 +132,11 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
                 }}
                 className="
                   relative z-10
-                  w-[260px]
-                  sm:w-[300px]
-                  md:w-[320px]
-                  lg:w-[360px]
-                  xl:w-[380px]
+                  w-[340px]
+                  sm:w-[380px]
+                  md:w-[400px]
+                  lg:w-[420px]
+                  xl:w-[440px]
                   h-auto
                   drop-shadow-[0_30px_70px_rgba(0,0,0,0.18)]
                   select-none pointer-events-none
