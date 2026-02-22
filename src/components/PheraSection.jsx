@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import BackToTimeline from "./BackToTimeLine";
+import BackToTimeLine from "./BackToTimeLine";
 
 export default function PheraSection() {
   return (
@@ -144,7 +144,7 @@ export default function PheraSection() {
           </motion.div>
         </div>
       </div>
-      <BackToTimeline />
+      <BackToTimeLine />
     </section>
   );
 }

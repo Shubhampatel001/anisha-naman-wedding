@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import BackToTimeline from "./BackToTimeLine";
+import BackToTimeLine from "./BackToTimeLine";
 
 export default function MyraSection() {
   return (
@@ -95,7 +95,7 @@ export default function MyraSection() {
           </motion.div>
         </div>
       </div>
-      <BackToTimeline />
+      <BackToTimeLine />
     </section>
   );
 }

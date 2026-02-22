@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import BackToTimeline from "./BackToTimeLine";
+import BackToTimeLine from "./BackToTimeLine";
 
 export default function VarmalaSection() {
   return (
@@ -134,7 +134,7 @@ export default function VarmalaSection() {
           </motion.div>
         </div>
       </div>
-      <BackToTimeline />
+      <BackToTimeLine />
     </section>
   );
 }

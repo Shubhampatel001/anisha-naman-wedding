@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useTimelineBackButton } from "../components/hooks/useTimelineBackButton";
+import { useTimelineBackButton } from "./hooks/useTimelineBackButton";
 
-export default function BackToTimeline() {
+export default function BackToTimeLine() {
   const show = useTimelineBackButton();
 
   return (
