@@ -6,7 +6,8 @@ import IntroOverlay from "./components/IntroOverlay";
 import MusicButton from "./components/MusicButton";
 import Hero from "./components/Hero";
 import Countdown from "./components/Countdown";
-import DayProgram from "./components/DayProgram";
+// import DayProgram from "./components/DayProgram";
+import FunctionHeading from "./components/FunctionHeading";
 // import Wardrobe from "./components/Wardrobe";
 import Location from "./components/Location";
 import RSVP from "./components/RSVP";
@@ -45,6 +46,9 @@ export default function App() {
       <Countdown />
       <Location />
 
+      <SectionDivider />
+      <FunctionHeading />
+
       {/* <SectionDivider /> */}
       <MehendiSection />
 
@@ -64,7 +68,7 @@ export default function App() {
       <PheraSection />
 
       {/* <SectionDivider /> */}
-      <DayProgram />
+      {/* <DayProgram /> */}
 
       <SectionDivider />
       <Gifts />

@@ -43,3 +43,12 @@ video {
   background: rgba(156, 175, 136, 0.35); /* sage tint */
   color: #1f2937;
 }
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

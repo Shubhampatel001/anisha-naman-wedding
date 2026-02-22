@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
+import BackToTimeline from "./BackToTimeLine";
 
 export default function VarmalaSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-[#FDF7F7] overflow-hidden">
+    <section
+      id="varmala"
+      className="relative py-24 md:py-32 bg-[#FDF7F7] overflow-hidden"
+    >
       {/* 🌸 soft romantic aura */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-rose-200/25 rounded-full blur-[140px]" />
@@ -10,27 +14,58 @@ export default function VarmalaSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-          {/* 🌼 gentle falling petals */}
+          {/* 🌸 premium falling petals */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {[...Array(10)].map((_, i) => (
+            {[...Array(12)].map((_, i) => (
               <motion.div
-                key={`fall-${i}`}
+                key={`petal-${i}`}
+                initial={{ y: -60, opacity: 0 }}
                 animate={{
-                  y: [-40, 700],
-                  x: [0, i % 2 ? 20 : -20, 0],
-                  rotate: [0, 180],
+                  y: ["0vh", "110vh"],
+                  x: [0, i % 2 ? 30 : -30, 0],
+                  rotate: [0, 120, 260],
+                  opacity: [0, 0.9, 0.9, 0],
                 }}
                 transition={{
-                  duration: 1 + i * 1.5,
+                  duration: 10 + i * 0.8, // ✅ slow elegant fall
                   repeat: Infinity,
                   ease: "linear",
                   delay: i * 1.1,
                 }}
-                className="absolute w-2 h-3 bg-rose-300/70 rounded-full blur-[0.3px]"
-                style={{ left: `${8 + i * 9}%` }}
-              />
+                className="absolute"
+                style={{ left: `${6 + i * 7}%` }}
+              >
+                {/* petal shape */}
+                <div
+                  className="
+          w-[10px] h-[14px]
+          bg-rose-300/80
+          rounded-[60%_40%_60%_40%]
+          blur-[0.2px]
+        "
+                />
+              </motion.div>
             ))}
           </div>
+          {/* 🌺 subtle garland swing */}
+          <motion.img
+            src="/garland.png"
+            animate={{ rotate: [-2, 2, -2] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="
+    hidden md:block
+    absolute
+    left-1/2 -translate-x-1/2
+    top-10
+    w-40
+    opacity-70
+    pointer-events-none
+  "
+          />
           {/* Illustration (LEFT) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
@@ -65,25 +100,41 @@ export default function VarmalaSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-center md:text-left order-2"
           >
-            <p className="uppercase tracking-[0.35em] text-xs text-rose-700 mb-3">
-              Wedding Moment
+            {/* 📅 Day + Date */}
+            <p className="uppercase tracking-[0.35em] text-[11px] text-rose-600/80 mb-2">
+              Day 3 · 20 April 2026
             </p>
 
-            <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-rose-900 mb-4">
+            {/* 💍 Eyebrow */}
+            <p className="uppercase tracking-[0.35em] text-xs text-rose-700 mb-3">
+              The Sacred Union
+            </p>
+
+            {/* 🎯 Title */}
+            <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-rose-900 mb-3">
               Varmala
             </h2>
 
+            {/* ⏰ Time pill */}
+            <div className="mb-4">
+              <span className="inline-block px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-medium ring-1 ring-rose-200">
+                6:30 PM
+              </span>
+            </div>
+
+            {/* 📝 Description */}
             <p className="text-gray-600 max-w-md mx-auto md:mx-0">
-              The moment we choose each other — surrounded by love, laughter,
-              and petals.
+              The beautiful moment of exchanging garlands in love.
             </p>
 
+            {/* 👗 Attire */}
             <div className="mt-6 inline-block px-4 py-2 rounded-full bg-rose-100 text-rose-800 text-sm">
               Traditional Attire
             </div>
           </motion.div>
         </div>
       </div>
+      <BackToTimeline />
     </section>
   );
 }

@@ -5,10 +5,10 @@ export const events = [
     title: "Mehendi Ceremony",
     schedule: [
       {
-        title: "Mehendi",
-        time: "16:00",
+        title: "Mehendi Ceremony",
+        time: "4:00 PM",
         icon: "mehendi",
-        desc: "Henna ceremony with blessings and joy",
+        desc: "An afternoon of henna, laughter, and joyful beginnings.",
       },
     ],
   },
@@ -20,15 +20,15 @@ export const events = [
     schedule: [
       {
         title: "Myra",
-        time: "10:00",
-        icon: "garland", // reuse existing icon
-        desc: "Traditional Myra ceremony with family rituals",
+        time: "10:00 AM",
+        icon: "garland",
+        desc: "A cherished family tradition filled with blessings and love.",
       },
       {
-        title: "Sangeet",
-        time: "18:00",
+        title: "Sangeet Night",
+        time: "6:00 PM",
         icon: "music",
-        desc: "An evening of music and dance",
+        desc: "An evening of music, dance, and unforgettable celebration.",
       },
     ],
   },
@@ -40,22 +40,22 @@ export const events = [
     isMain: true,
     schedule: [
       {
-        title: "Haldi",
-        time: "10:00",
+        title: "Haldi Ceremony",
+        time: "10:00 AM",
         icon: "haldi",
-        desc: "Auspicious turmeric ritual",
+        desc: "A vibrant turmeric ritual to bless the couple with prosperity.",
       },
       {
         title: "Varmala",
-        time: "18:30",
+        time: "6:30 PM",
         icon: "garland",
-        desc: "Exchange of garlands",
+        desc: "The beautiful moment of exchanging garlands in love.",
       },
       {
-        title: "Phera",
-        time: "21:00",
+        title: "Phera Ceremony",
+        time: "9:00 PM",
         icon: "fire",
-        desc: "Sacred vows around the holy fire",
+        desc: "Seven sacred vows around the holy fire — the beginning of forever.",
       },
     ],
   },

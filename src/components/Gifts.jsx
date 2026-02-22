@@ -6,7 +6,7 @@ export default function Gifts() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section className="py-24 bg-ivory">
+    <section id="gifts" className="py-24 bg-ivory">
       <div className="max-w-md mx-auto px-6 text-center">
         {/* Heading */}
         <motion.h2

@@ -27,8 +27,8 @@ export default function Location() {
           className="flex justify-center mb-10 md:mb-14"
         >
           <img
-            src="/mandap.png"
-            alt="mandap"
+            src="/diya.gif"
+            alt="diya"
             className="
               w-full
               max-w-[120px]
