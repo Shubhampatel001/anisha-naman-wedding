@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useParallax } from "../components/hooks/useParallax";
-import BackToTimeLine from "./BackToTimeLine";
 export default function MehendiSection() {
   const floralOffset = useParallax(0.25);
   return (
@@ -128,7 +127,6 @@ export default function MehendiSection() {
           </motion.div>
         </div>
       </div>
-      <BackToTimeLine />
     </section>
   );
 }

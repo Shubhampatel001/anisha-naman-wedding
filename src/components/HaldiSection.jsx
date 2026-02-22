@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useParallax } from "../components/hooks/useParallax";
-import BackToTimeLine from "./BackToTimeLine";
 
 export default function HaldiSection() {
   const offset = useParallax(0.15);
@@ -141,7 +140,6 @@ export default function HaldiSection() {
           </motion.div>
         </div>
       </div>
-      <BackToTimeLine />
     </section>
   );
 }

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useParallax } from "../components/hooks/useParallax";
-import BackToTimeLine from "./BackToTimeLine";
 
 export default function SangeetSection() {
   const lightOffset = useParallax(0.18);
@@ -153,7 +152,6 @@ export default function SangeetSection() {
           </motion.div>
         </div>
       </div>
-      <BackToTimeLine />
     </section>
   );
 }
