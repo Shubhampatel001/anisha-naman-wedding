@@ -11,7 +11,8 @@ export default function Hero({ data }) {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
+            //poster="/hero-poster.webp" // what to do?
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/Hero-bg-video.webm" type="video/webm" />
@@ -31,7 +32,7 @@ export default function Hero({ data }) {
         }}
         className="
           relative z-10 text-center px-6
-          bg-black/25 backdrop-blur-sm
+          bg-black/25 backdrop-blur-[2px]
           rounded-2xl
           py-8 md:py-12
           max-w-2xl mx-auto
@@ -88,7 +89,7 @@ export default function Hero({ data }) {
         </span> */}
         {/* Arrow circle */}
         <motion.div
-          animate={{ y: [0, 10, 0] }}
+          animate={{ y: [0, 6, 0] }}
           transition={{
             duration: 2,
             repeat: Infinity,
@@ -117,8 +118,6 @@ export default function Hero({ data }) {
           </svg>
         </motion.div>
       </motion.button>
-      {/* bottom color blend */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent via-[#9FB8A8]/70 to-[#9FB8A8] pointer-events-none z-10" />
     </section>
   );
 }

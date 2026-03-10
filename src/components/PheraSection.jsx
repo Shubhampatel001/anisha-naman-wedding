@@ -8,7 +8,7 @@ export default function PheraSection() {
     >
       {/* warm sacred aura */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-orange-200/25 rounded-full blur-[140px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-orange-200/25 rounded-full blur-[110px]" />
       </div>
       {/* 🔥 fire glow flicker */}
       <motion.div
@@ -22,7 +22,7 @@ export default function PheraSection() {
       />
       {/* ✨ embers */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <motion.span
             key={i}
             animate={{ y: [0, -60], opacity: [0.6, 0] }}
@@ -33,17 +33,17 @@ export default function PheraSection() {
               delay: i * 0.6,
             }}
             className="absolute w-1 h-1 bg-orange-400 rounded-full"
-            style={{ left: `${40 + i * 4}%`, bottom: "80px" }}
+            style={{ left: `${46 + i * 4}%`, bottom: "80px" }}
           />
         ))}
       </div>
       {/* 🔥 warm havan particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(12)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <motion.span
             key={i}
             animate={{
-              y: [0, -120],
+              y: [0, -100],
               opacity: [0, 0.8, 0],
             }}
             transition={{
@@ -54,7 +54,7 @@ export default function PheraSection() {
             }}
             className="absolute w-1 h-1 bg-orange-300 rounded-full"
             style={{
-              left: `${40 + (i - 6) * 3}%`,
+              left: `${40 + (i - 2) * 6}%`,
               bottom: "20%",
             }}
           />
@@ -85,6 +85,8 @@ export default function PheraSection() {
             className="flex justify-center order-1 md:order-2"
           >
             <img
+              loading="lazy"
+              decoding="async"
               src="/pheraF.webp"
               alt="Phera ceremony illustration"
               className="

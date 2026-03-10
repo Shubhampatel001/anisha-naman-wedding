@@ -15,7 +15,7 @@ export default function Location() {
 
   return (
     <section className="relative py-20 md:py-28 bg-ivory overflow-hidden">
-      <div className="absolute -top-[1px] left-0 right-0 h-32 bg-gradient-to-b from-[#9FB8A8] via-[#9FB8A8]/70 to-transparent pointer-events-none" />
+      <div className="absolute -top-[1px] left-0 right-0 h-32 bg-gradient-to-b from-[#9FB4C7] via-[#9FB4C7]/70 to-transparent pointer-events-none" />
       <div className="max-w-md md:max-w-lg lg:max-w-xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 12, scale: 0.96 }}

@@ -75,7 +75,7 @@ export default function Countdown() {
   return (
     <section
       id="countdown"
-      className="relative py-28 bg-[#9FB8A8] text-white text-center overflow-hidden border-b border-transparent"
+      className="relative py-28 bg-[#9FB4C7] text-white text-center overflow-hidden border-b border-transparent"
     >
       {/* Heading */}
       <motion.h2
@@ -96,7 +96,12 @@ export default function Countdown() {
         viewport={{ amount: 0.3 }}
         className="flex justify-center gap-3 sm:gap-8 md:gap-10 px-4 max-w-full overflow-hidden"
       >
-        {Object.entries(timeLeft).map(([label, value]) => (
+        {[
+          ["days", timeLeft.days],
+          ["hours", timeLeft.hours],
+          ["mins", timeLeft.mins],
+          ["secs", timeLeft.secs],
+        ].map(([label, value]) => (
           <motion.div
             key={label}
             variants={card}

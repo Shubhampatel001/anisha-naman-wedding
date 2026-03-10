@@ -7,12 +7,12 @@ export default function SangeetSection() {
     <section
       id="sangeet"
       className="relative py-24 md:py-32 overflow-hidden text-white
-  bg-gradient-to-b from-[#FFF6FB] via-[#3B124C] to-[#14081F]"
+  bg-gradient-to-b from-[#FFF6FB] via-[#5B1A6E] via-[#3B124C] to-[#FFF7E6]"
     >
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#FFF6FB] to-transparent pointer-events-none" />
       {/* ✨ parallax floating light */}
       <motion.span
-        style={{ transform: `translateY(${lightOffset * 0.6}px)` }}
+        style={{ transform: `translateY(${lightOffset * 0.6}px,0)` }}
         className="
     absolute
     right-[12%] top-[18%]
@@ -26,16 +26,16 @@ export default function SangeetSection() {
       />
       {/* neon glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-fuchsia-500/15 rounded-full blur-[160px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-fuchsia-500/15 rounded-full blur-[120px]" />
       </div>
       {/* 💃 equalizer */}
       <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none flex items-end justify-center gap-1 opacity-40">
-        {[...Array(24)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <motion.span
             key={i}
-            animate={{ height: [8, 28 + (i % 6) * 6, 10] }}
+            animate={{ height: [8, 24 + (i % 4) * 6, 10] }}
             transition={{
-              duration: 1.2 + (i % 5) * 0.2,
+              duration: 1.4 + (i % 3) * 0.2,
               repeat: Infinity,
               ease: "easeInOut",
             }}
@@ -45,40 +45,40 @@ export default function SangeetSection() {
       </div>
       {/* ✨ floating lights */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <motion.span
             key={i}
-            animate={{ y: [0, -40, 0], opacity: [0.2, 0.7, 0.2] }}
+            animate={{ y: [0, -30, 0], opacity: [0.3, 0.8, 0.3] }}
             transition={{
-              duration: 6 + i,
+              duration: 7 + i,
               repeat: Infinity,
               ease: "easeInOut",
-              delay: i * 0.5,
+              delay: i * 0.6,
             }}
             className="absolute w-1 h-1 bg-fuchsia-300 rounded-full"
             style={{
-              left: `${15 + i * 12}%`,
-              top: `${25 + (i % 3) * 18}%`,
+              left: `${20 + i * 25}%`,
+              top: `${30 + (i % 2) * 20}%`,
             }}
           />
         ))}
       </div>
       {/* ✨ particles */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <motion.span
             key={i}
-            animate={{ y: [0, -30, 0], opacity: [0.15, 0.6, 0.15] }}
+            animate={{ y: [0, -25, 0], opacity: [0.2, 0.6, 0.2] }}
             transition={{
-              duration: 6 + i,
+              duration: 7 + i,
               repeat: Infinity,
               ease: "easeInOut",
-              delay: i * 0.6,
+              delay: i * 0.8,
             }}
             className="absolute w-1 h-1 bg-white/80 rounded-full"
             style={{
-              left: `${12 + i * 9}%`,
-              top: `${22 + (i % 4) * 14}%`,
+              left: `${18 + i * 18}%`,
+              top: `${28 + (i % 2) * 18}%`,
             }}
           />
         ))}
@@ -135,6 +135,8 @@ export default function SangeetSection() {
             className="flex justify-center order-1 md:order-2"
           >
             <img
+              loading="lazy"
+              decoding="async"
               src="/sangeetF.webp"
               alt="Sangeet night illustration"
               className="

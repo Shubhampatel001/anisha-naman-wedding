@@ -8,10 +8,9 @@ export default function HaldiSection() {
       id="haldi"
       className="relative py-24 md:py-32 overflow-hidden bg-[#FFF7E6]"
     >
-      <div className="absolute -top-24 left-0 right-0 h-32 bg-gradient-to-b from-[#2B0F3B] to-transparent pointer-events-none" />
       {/* soft radial glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-yellow-200/25 rounded-full blur-[140px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-yellow-200/25 rounded-full blur-[110px]" />
       </div>
       {/* 🌞 warm edge gradients */}
       <div className="absolute inset-0 pointer-events-none">
@@ -19,9 +18,11 @@ export default function HaldiSection() {
         <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-yellow-100/40 to-transparent" />
       </div>
       <motion.img
+        loading="lazy"
+        decoding="async"
         src="/marigold-left.png"
-        style={{ transform: `translateY(${offset * 0.6}px)` }}
-        animate={{ y: [0, -18, 0] }}
+        style={{ transform: `translateY(${offset * 0.6}px,0)` }}
+        // animate={{ y: [0, -18, 0] }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
         className="
     block
@@ -34,7 +35,7 @@ export default function HaldiSection() {
       />
       <motion.img
         src="/marigold-right.png"
-        animate={{ y: [0, -22, 0] }}
+        // animate={{ y: [0, -22, 0] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         className="
     hidden lg:block
@@ -44,14 +45,14 @@ export default function HaldiSection() {
   "
       />
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(10)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
             animate={{
-              y: [-60, 700],
-              x: [0, i % 2 ? 18 : -18],
-              rotate: [0, 180],
-              opacity: [0, 0.7, 0],
+              y: [-40, 600],
+              x: [0, i % 2 ? 12 : -12],
+              rotate: [0, 120],
+              opacity: [0, 0.6, 0],
             }}
             transition={{
               duration: 5 + i * 0.6,
@@ -102,6 +103,7 @@ export default function HaldiSection() {
               loop
               muted
               playsInline
+              preload="none"
               className="rounded-[80px] 
     transition-all duration-500
     w-[240px]
@@ -162,6 +164,7 @@ export default function HaldiSection() {
           </motion.div>
         </div>
       </div>
+      <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none bg-gradient-to-b from-transparent to-[#FDF7F7]" />
     </section>
   );
 }

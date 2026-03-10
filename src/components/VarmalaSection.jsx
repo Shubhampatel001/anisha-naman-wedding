@@ -8,22 +8,22 @@ export default function VarmalaSection() {
     >
       {/* 🌸 soft romantic aura */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-rose-200/25 rounded-full blur-[140px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-rose-200/25 rounded-full blur-[110px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* 🌸 premium falling petals */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {[...Array(12)].map((_, i) => (
+            {[...Array(5)].map((_, i) => (
               <motion.div
                 key={`petal-${i}`}
                 initial={{ y: -60, opacity: 0 }}
                 animate={{
-                  y: ["0vh", "110vh"],
-                  x: [0, i % 2 ? 30 : -30, 0],
-                  rotate: [0, 120, 260],
-                  opacity: [0, 0.9, 0.9, 0],
+                  y: [-40, 600],
+                  x: [0, i % 2 ? 20 : -20],
+                  rotate: [0, 140],
+                  opacity: [0, 0.9, 0],
                 }}
                 transition={{
                   duration: 10 + i * 0.8, // ✅ slow elegant fall
@@ -32,7 +32,7 @@ export default function VarmalaSection() {
                   delay: i * 1.1,
                 }}
                 className="absolute"
-                style={{ left: `${6 + i * 7}%` }}
+                style={{ left: `${10 + i * 18}%` }}
               >
                 {/* petal shape */}
                 <div
@@ -75,6 +75,8 @@ export default function VarmalaSection() {
             className="flex justify-center order-1"
           >
             <img
+              loading="lazy"
+              decoding="async"
               src="/varmalaF.webp"
               alt="Varmala ceremony illustration"
               className="

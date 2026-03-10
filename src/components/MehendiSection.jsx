@@ -9,25 +9,23 @@ export default function MehendiSection() {
     >
       {/* soft green aura */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-green-200/25 rounded-full blur-[140px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] blur-[110px] bg-green-200/25 rounded-full" />
       </div>
       {/* 🌿 side florals */}
       <motion.img
         src="/floral-green-left.png"
-        style={{ transform: `translateY(${floralOffset * 0.6}px)` }}
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        loading="lazy"
+        decoding="async"
+        style={{ transform: `translate3d(0, ${floralOffset * 0.6}px, 0)` }}
         className="
-    block
-    absolute left-[-20px] md:left-0 top-24
-    w-28 sm:w-32 md:w-40
-    opacity-25 md:opacity-30
-    pointer-events-none
-  "
+          absolute left-[-20px] md:left-0 top-24
+          w-28 sm:w-32 md:w-40
+          opacity-25 md:opacity-30
+          pointer-events-none
+        "
       />
       <motion.img
         src="/floral-green-right.png"
-        animate={{ y: [0, -18, 0] }}
         transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
         className="
     block lg:block
@@ -65,7 +63,7 @@ export default function MehendiSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ amount: 0.4 }}
             transition={{ duration: 0.6 }}
-            animate={{ y: [0, -6, 0] }}
+            whileHover={{ y: -4 }}
             className="flex justify-center"
           >
             {/* <img
@@ -89,6 +87,7 @@ export default function MehendiSection() {
               loop
               muted
               playsInline
+              preload="none"
               className="
               rounded-[80px] 
     transition-all duration-500

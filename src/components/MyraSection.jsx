@@ -8,7 +8,7 @@ export default function MyraSection() {
     >
       {/* soft pink aura */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-pink-200/25 rounded-full blur-[140px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-pink-200/25 rounded-full blur-[110px]" />
       </div>
 
       {/* ✨ premium sparkle */}
@@ -55,22 +55,22 @@ export default function MyraSection() {
               loop
               muted
               playsInline
+              preload="none"
+              // poster="/myra-poster.webp"
               className="
-  rounded-[80px] 
-    transition-all duration-500
-    w-[240px]
-    sm:w-[280px]
-    md:w-[320px]
-    lg:w-[360px]
-    xl:w-[400px]
-    h-auto
-    drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
-    select-none
-    pointer-events-none
-  "
+                rounded-[80px]
+                w-[240px]
+                sm:w-[280px]
+                md:w-[320px]
+                lg:w-[360px]
+                xl:w-[400px]
+                h-auto
+                drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
+                select-none
+                pointer-events-none
+              "
             >
               <source src="/myra.webm" type="video/webm" />
-              Your browser does not support the video tag.
             </video>
           </motion.div>
 

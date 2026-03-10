@@ -18,6 +18,14 @@ const functions = [
   { label: "Phera", id: "phera", Icon: Flame, color: "orange" },
 ];
 
+const gradients = {
+  emerald: "bg-gradient-to-br from-[#7FAF8E] to-[#5C8F71]", // Mehendi
+  rose: "bg-gradient-to-br from-[#EFA7B4] to-[#D77B92]", // Myra
+  fuchsia: "bg-gradient-to-br from-[#9C7BC6] to-[#7C5EA6]", // Sangeet
+  amber: "bg-gradient-to-br from-[#F2C76E] to-[#E0A948]", // Haldi
+  pink: "bg-gradient-to-br from-[#E58DA5] to-[#C96882]", // Varmala
+  orange: "bg-gradient-to-br from-[#E49A6D] to-[#D06F47]", // Phera
+};
 /* ---------- animations ---------- */
 
 const container = {
@@ -95,7 +103,7 @@ export default function FunctionHeading() {
           <div
             className="
     absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px
-    bg-gradient-to-b from-transparent via-sage/40 to-transparent
+    bg-gradient-to-b from-transparent via-[#C9D7E5]/50 to-transparent
   "
           />
 
@@ -124,44 +132,20 @@ export default function FunctionHeading() {
                     initial={{ scale: 0.92, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ amount: 0.4 }}
-                    animate={{ y: [0, -3, 0] }}
-                    transition={{
-                      y: {
-                        duration: 6,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      },
-                    }}
-                    whileHover={{ scale: 1.12 }}
+                    whileHover={{ y: -4, scale: 1.1 }}
+                    transition={{ duration: 0.25 }}
                     className={`
-    relative z-10
-    w-11 h-11 rounded-full
-    flex items-center justify-center
-    mx-auto
-    text-white
-    shadow-md
-    border border-white/30
-    backdrop-blur-sm
-    transition
-
-    ${
-      fn.color === "emerald" &&
-      "bg-gradient-to-br from-emerald-400 to-emerald-600"
-    }
-
-    ${fn.color === "rose" && "bg-gradient-to-br from-rose-400 to-pink-500"}
-
-    ${
-      fn.color === "fuchsia" &&
-      "bg-gradient-to-br from-fuchsia-400 to-purple-500"
-    }
-
-    ${fn.color === "amber" && "bg-gradient-to-br from-yellow-400 to-amber-500"}
-
-    ${fn.color === "pink" && "bg-gradient-to-br from-pink-400 to-rose-500"}
-
-    ${fn.color === "orange" && "bg-gradient-to-br from-orange-400 to-red-500"}
-  `}
+                      relative z-10
+                      w-11 h-11 rounded-full
+                      flex items-center justify-center
+                      mx-auto
+                      text-white
+                      shadow-md
+                      border border-white/30
+                      backdrop-blur-sm
+                      transition
+                      ${gradients[fn.color]}
+                      `}
                   >
                     {/* glow */}
                     <span className="absolute inset-0 rounded-full blur-md opacity-30 bg-white/20 group-hover:opacity-60 transition" />
@@ -190,7 +174,7 @@ export default function FunctionHeading() {
             <div
               className="
     absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px
-    bg-gradient-to-r from-transparent via-sage/40 to-transparent
+    bg-gradient-to-r from-transparent via-[#C9D7E5]/50 to-transparent
   "
             />
 
@@ -222,34 +206,17 @@ export default function FunctionHeading() {
                         }}
                         whileHover={{ scale: 1.12 }}
                         className={`
-    relative z-10
-    w-11 h-11 rounded-full
-    flex items-center justify-center
-    mx-auto
-    text-white
-    shadow-md
-    border border-white/30
-    backdrop-blur-sm
-    transition
-
-    ${
-      fn.color === "emerald" &&
-      "bg-gradient-to-br from-emerald-400 to-emerald-600"
-    }
-
-    ${fn.color === "rose" && "bg-gradient-to-br from-rose-400 to-pink-500"}
-
-    ${
-      fn.color === "fuchsia" &&
-      "bg-gradient-to-br from-fuchsia-400 to-purple-500"
-    }
-
-    ${fn.color === "amber" && "bg-gradient-to-br from-yellow-400 to-amber-500"}
-
-    ${fn.color === "pink" && "bg-gradient-to-br from-pink-400 to-rose-500"}
-
-    ${fn.color === "orange" && "bg-gradient-to-br from-orange-400 to-red-500"}
-  `}
+                          relative z-10
+                          w-11 h-11 rounded-full
+                          flex items-center justify-center
+                          mx-auto
+                          text-white
+                          shadow-md
+                          border border-white/30
+                          backdrop-blur-sm
+                          transition
+                          ${gradients[fn.color]}
+                        `}
                       >
                         {/* glow */}
                         <span className="absolute inset-0 rounded-full blur-md opacity-30 bg-white/20 group-hover:opacity-60 transition" />
