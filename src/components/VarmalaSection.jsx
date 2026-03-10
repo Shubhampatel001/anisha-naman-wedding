@@ -113,7 +113,7 @@ export default function VarmalaSection() {
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-rose-900 mb-3">
-              Varmala
+              Shub-Aarambh
             </h2>
 
             {/* ⏰ Time pill */}
@@ -125,7 +125,7 @@ export default function VarmalaSection() {
 
             {/* 📝 Description */}
             <p className="text-gray-600 max-w-md mx-auto md:mx-0">
-              The beautiful moment of exchanging garlands in love.
+              Two souls choosing each other forever
             </p>
 
             {/* 👗 Attire */}

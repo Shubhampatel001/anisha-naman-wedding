@@ -81,7 +81,7 @@ export default function Location() {
             className="px-6"
           >
             <img
-              src="/venue.webp"
+              src="/venue1.jpg"
               alt={venueName}
               className="w-full h-52 md:h-60 object-cover rounded-xl"
             />

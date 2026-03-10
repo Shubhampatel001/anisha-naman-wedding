@@ -104,7 +104,7 @@ export default function SangeetSection() {
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif mb-4">
-              Sangeet Night
+              Nach Baliye Nights
             </h2>
 
             {/* ⏰ Time pill */}
@@ -115,9 +115,7 @@ export default function SangeetSection() {
             </div>
 
             {/* 📝 Description */}
-            <p className="text-white/70 max-w-md">
-              An evening of music, dance, and unforgettable celebration.
-            </p>
+            <p className="text-white/70 max-w-md">Its the time to Disco</p>
 
             {/* 👗 Attire */}
             <div className="mt-6 inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm">

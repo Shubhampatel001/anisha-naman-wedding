@@ -105,7 +105,7 @@ export default function MehendiSection() {
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-green-900 mb-4">
-              Mehendi Ceremony
+              Mehfil-e-Mehendi
             </h2>
 
             {/* ⏰ Time pill */}
@@ -117,7 +117,7 @@ export default function MehendiSection() {
 
             {/* 📝 Description */}
             <p className="text-gray-600 max-w-md mx-auto md:mx-0">
-              An afternoon of henna, laughter, and joyful beginnings.
+              Intricate henna whisphering stories of love
             </p>
 
             {/* 👗 Dress code */}

@@ -72,7 +72,7 @@ export default function MyraSection() {
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-rose-900 mb-4">
-              Myra Ceremony
+              Rishto ka Rangmanch
             </h2>
 
             {/* ⏰ Time pill */}
@@ -84,7 +84,7 @@ export default function MyraSection() {
 
             {/* 📝 Description */}
             <p className="text-gray-600 max-w-md md:max-w-lg mx-auto md:mx-0">
-              A cherished family tradition filled with blessings and love.
+              Maternal blessings wrapped in warmth and traditions
             </p>
 
             {/* 👗 Optional attire pill (recommended for consistency) */}

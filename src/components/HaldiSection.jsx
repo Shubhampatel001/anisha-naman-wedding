@@ -117,7 +117,7 @@ export default function HaldiSection() {
 
             {/* 🎯 Main title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-yellow-900 mb-4">
-              Haldi Ceremony
+              Rangpreet
             </h2>
 
             {/* ⏰ Time pill */}
@@ -129,8 +129,7 @@ export default function HaldiSection() {
 
             {/* 📝 Description */}
             <p className="text-gray-600 leading-relaxed max-w-md mx-auto md:mx-0">
-              Rang haldi ka, jazbaat dil ke — join us as we begin the wedding
-              celebrations with love, laughter, and turmeric hues.
+              Rang haldi ke, jazbaat dil ke
             </p>
 
             {/* 👗 Dress code */}

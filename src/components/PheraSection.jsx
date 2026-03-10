@@ -121,7 +121,7 @@ export default function PheraSection() {
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-rose-900 mb-4">
-              Phera Ceremony
+              Saath vachan,saath janam
             </h2>
 
             {/* ⏰ Time pill */}
@@ -133,7 +133,7 @@ export default function PheraSection() {
 
             {/* 📝 Description */}
             <p className="text-gray-600 max-w-md md:max-w-lg mx-auto md:mx-0">
-              Seven sacred vows around the holy fire — the beginning of forever.
+              Sacred vows around the eternal fire
             </p>
 
             {/* 👗 Attire pill (recommended for visual rhythm) */}
