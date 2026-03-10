@@ -10,12 +10,12 @@ import {
 
 // ✅ quick navigation functions
 const functions = [
-  { label: "Mehendi", id: "mehendi", Icon: Sparkles },
-  { label: "Myra", id: "myra", Icon: Gift },
-  { label: "Sangeet", id: "sangeet", Icon: Music2 },
-  { label: "Haldi", id: "haldi", Icon: Flower2 },
-  { label: "Varmala", id: "varmala", Icon: HeartHandshake },
-  { label: "Phera", id: "phera", Icon: Flame },
+  { label: "Mehendi", id: "mehendi", Icon: Sparkles, color: "emerald" },
+  { label: "Myra", id: "myra", Icon: Gift, color: "rose" },
+  { label: "Sangeet", id: "sangeet", Icon: Music2, color: "fuchsia" },
+  { label: "Haldi", id: "haldi", Icon: Flower2, color: "amber" },
+  { label: "Varmala", id: "varmala", Icon: HeartHandshake, color: "pink" },
+  { label: "Phera", id: "phera", Icon: Flame, color: "orange" },
 ];
 
 /* ---------- animations ---------- */
@@ -124,32 +124,49 @@ export default function FunctionHeading() {
                     initial={{ scale: 0.92, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ amount: 0.4 }}
-                    animate={{ y: [0, -2, 0] }}
+                    animate={{ y: [0, -3, 0] }}
                     transition={{
                       y: {
                         duration: 6,
                         repeat: Infinity,
                         ease: "easeInOut",
                       },
-                      scale: { duration: 0.5 },
-                      opacity: { duration: 0.5 },
                     }}
                     whileHover={{ scale: 1.12 }}
-                    className="
+                    className={`
     relative z-10
     w-11 h-11 rounded-full
-    bg-white border border-sage/30
     flex items-center justify-center
-    text-sage mx-auto
-    shadow-sm
-    group-hover:border-primary/40
+    mx-auto
+    text-white
+    shadow-md
+    border border-white/30
+    backdrop-blur-sm
     transition
-  "
-                  >
-                    {/* ✨ glow ring */}
-                    <span className="absolute inset-0 rounded-full bg-primary/10 blur-md opacity-0 group-hover:opacity-100 transition" />
 
-                    <Icon size={16} className="relative z-10" />
+    ${
+      fn.color === "emerald" &&
+      "bg-gradient-to-br from-emerald-400 to-emerald-600"
+    }
+
+    ${fn.color === "rose" && "bg-gradient-to-br from-rose-400 to-pink-500"}
+
+    ${
+      fn.color === "fuchsia" &&
+      "bg-gradient-to-br from-fuchsia-400 to-purple-500"
+    }
+
+    ${fn.color === "amber" && "bg-gradient-to-br from-yellow-400 to-amber-500"}
+
+    ${fn.color === "pink" && "bg-gradient-to-br from-pink-400 to-rose-500"}
+
+    ${fn.color === "orange" && "bg-gradient-to-br from-orange-400 to-red-500"}
+  `}
+                  >
+                    {/* glow */}
+                    <span className="absolute inset-0 rounded-full blur-md opacity-30 bg-white/20 group-hover:opacity-60 transition" />
+
+                    <Icon size={18} className="relative z-10" />
                   </motion.div>
 
                   {/* RIGHT label */}
@@ -195,32 +212,49 @@ export default function FunctionHeading() {
                         initial={{ scale: 0.92, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         viewport={{ amount: 0.4 }}
-                        animate={{ y: [0, -2, 0] }}
+                        animate={{ y: [0, -3, 0] }}
                         transition={{
                           y: {
                             duration: 6,
                             repeat: Infinity,
                             ease: "easeInOut",
                           },
-                          scale: { duration: 0.5 },
-                          opacity: { duration: 0.5 },
                         }}
                         whileHover={{ scale: 1.12 }}
-                        className="
+                        className={`
     relative z-10
     w-11 h-11 rounded-full
-    bg-white border border-sage/30
     flex items-center justify-center
-    text-sage mx-auto
-    shadow-sm
-    group-hover:border-primary/40
+    mx-auto
+    text-white
+    shadow-md
+    border border-white/30
+    backdrop-blur-sm
     transition
-  "
-                      >
-                        {/* ✨ glow ring */}
-                        <span className="absolute inset-0 rounded-full bg-primary/10 blur-md opacity-0 group-hover:opacity-100 transition" />
 
-                        <Icon size={16} className="relative z-10" />
+    ${
+      fn.color === "emerald" &&
+      "bg-gradient-to-br from-emerald-400 to-emerald-600"
+    }
+
+    ${fn.color === "rose" && "bg-gradient-to-br from-rose-400 to-pink-500"}
+
+    ${
+      fn.color === "fuchsia" &&
+      "bg-gradient-to-br from-fuchsia-400 to-purple-500"
+    }
+
+    ${fn.color === "amber" && "bg-gradient-to-br from-yellow-400 to-amber-500"}
+
+    ${fn.color === "pink" && "bg-gradient-to-br from-pink-400 to-rose-500"}
+
+    ${fn.color === "orange" && "bg-gradient-to-br from-orange-400 to-red-500"}
+  `}
+                      >
+                        {/* glow */}
+                        <span className="absolute inset-0 rounded-full blur-md opacity-30 bg-white/20 group-hover:opacity-60 transition" />
+
+                        <Icon size={18} className="relative z-10" />
                       </motion.div>
 
                       {/* label */}
