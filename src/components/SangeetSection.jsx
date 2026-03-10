@@ -106,7 +106,7 @@ export default function SangeetSection() {
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif mb-4">
-              Nach Baliye Nights
+              Nach Baliye Nights <br /> Sangeet
             </h2>
 
             {/* ⏰ Time pill */}

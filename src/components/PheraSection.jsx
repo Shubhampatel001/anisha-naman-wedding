@@ -121,7 +121,9 @@ export default function PheraSection() {
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-rose-900 mb-4">
-              Saath vachan,saath janam
+              Saath vachan,
+              <br />
+              Saath janam <br /> Phera
             </h2>
 
             {/* ⏰ Time pill */}

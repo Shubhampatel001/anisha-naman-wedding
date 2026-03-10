@@ -140,7 +140,7 @@ export default function HaldiSection() {
 
             {/* 🎯 Main title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-yellow-900 mb-4">
-              Rangpreet
+              Rangpreet <br /> Haldi
             </h2>
 
             {/* ⏰ Time pill */}

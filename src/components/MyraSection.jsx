@@ -94,7 +94,7 @@ export default function MyraSection() {
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-rose-900 mb-4">
-              Rishto ka Rangmanch
+              Rishto ka Rangmanch <br /> Myra
             </h2>
 
             {/* ⏰ Time pill */}
