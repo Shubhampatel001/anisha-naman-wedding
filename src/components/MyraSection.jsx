@@ -35,7 +35,7 @@ export default function MyraSection() {
             animate={{ y: [0, -5, 0] }}
             className="flex justify-center order-1 md:order-2"
           >
-            <img
+            {/* <img
               src="/myra-illustration.png"
               alt="Myra ceremony illustration"
               className="
@@ -49,7 +49,29 @@ export default function MyraSection() {
       select-none
       pointer-events-none
     "
-            />
+            /> */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="
+  rounded-[100px] 
+    transition-all duration-500
+    w-[240px]
+    sm:w-[280px]
+    md:w-[320px]
+    lg:w-[360px]
+    xl:w-[400px]
+    h-auto
+    drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
+    select-none
+    pointer-events-none
+  "
+            >
+              <source src="/myra.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
           </motion.div>
 
           {/* 📝 RIGHT content */}

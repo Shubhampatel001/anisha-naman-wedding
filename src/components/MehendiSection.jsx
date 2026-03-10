@@ -68,7 +68,7 @@ export default function MehendiSection() {
             animate={{ y: [0, -6, 0] }}
             className="flex justify-center"
           >
-            <img
+            {/* <img
               src="/mehendi-illustration.png"
               alt="Mehendi ceremony illustration"
               className="
@@ -82,7 +82,30 @@ export default function MehendiSection() {
       select-none
       pointer-events-none
     "
-            />
+            /> */}
+
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="
+              rounded-[100px] 
+    transition-all duration-500
+    w-[240px]
+    sm:w-[280px]
+    md:w-[320px]
+    lg:w-[360px]
+    xl:w-[400px]
+    h-auto
+    drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
+    select-none
+    pointer-events-none
+  "
+            >
+              <source src="/mehendi.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
           </motion.div>
 
           {/* 📝 RIGHT content */}
