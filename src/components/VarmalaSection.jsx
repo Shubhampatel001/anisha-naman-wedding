@@ -4,7 +4,7 @@ export default function VarmalaSection() {
   return (
     <section
       id="varmala"
-      className="relative py-24 md:py-32 bg-[#FDF7F7] overflow-hidden"
+      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-[#FDF7F7] to-[#FFF8F3]"
     >
       {/* 🌸 soft romantic aura */}
       <div className="absolute inset-0 pointer-events-none">

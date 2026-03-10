@@ -6,8 +6,10 @@ export default function SangeetSection() {
   return (
     <section
       id="sangeet"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#0F0F14] text-white"
+      className="relative py-24 md:py-32 overflow-hidden text-white
+  bg-gradient-to-b from-[#FFF6FB] via-[#3B124C] to-[#14081F]"
     >
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#FFF6FB] to-transparent pointer-events-none" />
       {/* ✨ parallax floating light */}
       <motion.span
         style={{ transform: `translateY(${lightOffset * 0.6}px)` }}

@@ -75,7 +75,7 @@ export default function Countdown() {
   return (
     <section
       id="countdown"
-      className="py-28 bg-[#9FB8A8] text-white text-center overflow-x-hidden"
+      className="relative py-28 bg-[#9FB8A8] text-white text-center overflow-hidden border-b border-transparent"
     >
       {/* Heading */}
       <motion.h2

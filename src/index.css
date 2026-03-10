@@ -52,3 +52,7 @@ video {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.cedarville-cursive {
+  font-family: "Cedarville Cursive", cursive;
+}

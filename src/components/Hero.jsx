@@ -38,7 +38,7 @@ export default function Hero({ data }) {
           text-white
         "
       >
-        <p className="uppercase tracking-[0.3em] text-sm mb-6 text-white/80">
+        <p className="cedarville-cursive text-lg md:text-xl mb-6 text-white/90">
           We are getting married
         </p>
 
@@ -52,7 +52,7 @@ export default function Hero({ data }) {
             एकत्वं अनन्तत्वम्
           </p>
 
-          <p className="mt-3 text-sm md:text-base italic text-white/90">
+          <p className="cedarville-cursive mt-3 text-lg md:text-xl text-white/90">
             Two hearts. One promise. A lifetime together.
           </p>
         </div>
@@ -117,6 +117,8 @@ export default function Hero({ data }) {
           </svg>
         </motion.div>
       </motion.button>
+      {/* bottom color blend */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent via-[#9FB8A8]/70 to-[#9FB8A8] pointer-events-none z-10" />
     </section>
   );
 }

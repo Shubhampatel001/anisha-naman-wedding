@@ -47,7 +47,7 @@ export default function App() {
       <Countdown />
       <Location />
 
-      <SectionDivider />
+      {/* <SectionDivider /> */}
 
       <FunctionHeading />
 
@@ -78,8 +78,8 @@ export default function App() {
       {/* <SectionDivider /> */}
       {/* <DayProgram /> */}
 
-      <SectionDivider />
-      <Gifts />
+      {/* <SectionDivider /> */}
+      {/* <Gifts /> */}
 
       <RSVP />
 

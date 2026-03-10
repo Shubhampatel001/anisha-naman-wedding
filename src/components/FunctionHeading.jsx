@@ -269,6 +269,8 @@ export default function FunctionHeading() {
           </div>
         </div>
       </div>
+      {/* bottom blend */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none bg-gradient-to-b from-ivory via-[#F4F8F2]/70 to-[#F4F8F2]" />
     </section>
   );
 }

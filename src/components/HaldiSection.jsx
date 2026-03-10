@@ -8,6 +8,7 @@ export default function HaldiSection() {
       id="haldi"
       className="relative py-24 md:py-32 overflow-hidden bg-[#FFF7E6]"
     >
+      <div className="absolute -top-24 left-0 right-0 h-32 bg-gradient-to-b from-[#2B0F3B] to-transparent pointer-events-none" />
       {/* soft radial glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-yellow-200/25 rounded-full blur-[140px]" />

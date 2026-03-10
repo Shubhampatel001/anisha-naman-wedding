@@ -5,7 +5,7 @@ export default function MehendiSection() {
   return (
     <section
       id="mehendi"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#F4F8F2]"
+      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-[#F4F8F2] to-[#FFF6FB]"
     >
       {/* soft green aura */}
       <div className="absolute inset-0 pointer-events-none">
