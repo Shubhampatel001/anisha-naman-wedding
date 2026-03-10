@@ -37,7 +37,7 @@ export default function MehendiSection() {
   "
       />
       {/* ✨ floating paisley */}
-      <motion.img
+      {/* <motion.img
         src="/paisley-green.png"
         animate={{ y: [0, -12, 0], rotate: [0, 6, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -47,7 +47,7 @@ export default function MehendiSection() {
     w-10 opacity-25
     pointer-events-none
   "
-      />
+      /> */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
           animate={{ y: [0, -20, 0] }}
