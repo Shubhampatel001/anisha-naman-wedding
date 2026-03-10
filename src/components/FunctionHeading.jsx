@@ -57,7 +57,10 @@ export default function FunctionHeading() {
     });
   };
   return (
-    <section id="timeline" className="relative py-24 bg-ivory overflow-hidden">
+    <section
+      id="timeline"
+      className="relative pt-24 pb-40 md:pb-24 bg-ivory overflow-hidden"
+    >
       {/* ✨ soft luxury aura */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[140px]" />
