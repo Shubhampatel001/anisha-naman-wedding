@@ -22,7 +22,6 @@ import SangeetSection from "./components/SangeetSection";
 import VarmalaSection from "./components/VarmalaSection";
 // import BackToTimeline from "./components/BackToTimeline";
 import SectionDivider from "./components/SectionDivider";
-import ScrollParallaxSection from "./components/ScrollParallaxSection";
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -49,39 +48,32 @@ export default function App() {
       <Location />
 
       <SectionDivider />
-      <ScrollParallaxSection>
-        <FunctionHeading />
-      </ScrollParallaxSection>
+
+      <FunctionHeading />
 
       {/* <SectionDivider /> */}
-      <ScrollParallaxSection>
-        <MehendiSection />
-      </ScrollParallaxSection>
+
+      <MehendiSection />
 
       {/* <SectionDivider /> */}
-      <ScrollParallaxSection>
-        <MyraSection />
-      </ScrollParallaxSection>
+
+      <MyraSection />
 
       {/* <SectionDivider /> */}
-      <ScrollParallaxSection>
-        <SangeetSection />
-      </ScrollParallaxSection>
+
+      <SangeetSection />
 
       {/* <SectionDivider /> */}
-      <ScrollParallaxSection>
-        <HaldiSection />
-      </ScrollParallaxSection>
+
+      <HaldiSection />
 
       {/* <SectionDivider /> */}
-      <ScrollParallaxSection>
-        <VarmalaSection />
-      </ScrollParallaxSection>
+
+      <VarmalaSection />
 
       {/* <SectionDivider /> */}
-      <ScrollParallaxSection>
-        <PheraSection />
-      </ScrollParallaxSection>
+
+      <PheraSection />
 
       {/* <SectionDivider /> */}
       {/* <DayProgram /> */}
