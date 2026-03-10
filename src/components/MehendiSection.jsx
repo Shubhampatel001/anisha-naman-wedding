@@ -90,7 +90,7 @@ export default function MehendiSection() {
               muted
               playsInline
               className="
-              rounded-[100px] 
+              rounded-[80px] 
     transition-all duration-500
     w-[240px]
     sm:w-[280px]

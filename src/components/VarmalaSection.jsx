@@ -75,7 +75,7 @@ export default function VarmalaSection() {
             className="flex justify-center order-1"
           >
             <img
-              src="/varmala-illustration.png"
+              src="/varmalaF.webp"
               alt="Varmala ceremony illustration"
               className="
                 w-[260px]

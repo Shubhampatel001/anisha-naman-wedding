@@ -133,7 +133,7 @@ export default function SangeetSection() {
             className="flex justify-center order-1 md:order-2"
           >
             <img
-              src="/sangeet-illustration.png"
+              src="/sangeetF.webp"
               alt="Sangeet night illustration"
               className="
               w-[240px]

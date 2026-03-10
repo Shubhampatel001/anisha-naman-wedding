@@ -52,15 +52,3 @@ video {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  scroll-snap-type: y proximity;
-}
-
-section {
-  scroll-snap-align: start;
-}

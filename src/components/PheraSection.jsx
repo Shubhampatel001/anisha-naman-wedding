@@ -85,7 +85,7 @@ export default function PheraSection() {
             className="flex justify-center order-1 md:order-2"
           >
             <img
-              src="/phera-illustration.png"
+              src="/pheraF.webp"
               alt="Phera ceremony illustration"
               className="
                 w-[240px]
