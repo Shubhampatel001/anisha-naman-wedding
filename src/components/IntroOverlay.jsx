@@ -129,34 +129,93 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
                 "
               />
 
-              {/* Floating Ganesh */}
-              <motion.img
-                src="/ganesh1.png"
-                alt="Ganesh"
-                animate={{ y: [0, -12, 0], scale: [1, 1.03, 1] }}
+              {/* Ganesh Wrapper */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                className="relative"
+              >
+                {/* Gold shimmer */}
+                <motion.div
+                  animate={{ x: ["-120%", "120%"] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="
+                    absolute inset-0
+                    bg-gradient-to-r
+                    from-transparent
+                    via-white/40
+                    to-transparent
+                    opacity-30
+                    blur-sm
+                  "
+                />
+
+                {/* Floating Ganesh */}
+                <motion.img
+                  src="/lordGaneshJi.png"
+                  alt="Ganesh"
+                  animate={{
+                    y: [0, -12, 0],
+                    scale: [1, 1.03, 1],
+                  }}
+                  transition={{
+                    duration: 3.8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="
+                    relative z-10
+                    w-[340px]
+                    sm:w-[380px]
+                    md:w-[400px]
+                    lg:w-[420px]
+                    xl:w-[440px]
+                    h-auto
+                    drop-shadow-[0_30px_70px_rgba(0,0,0,0.18)]
+                    select-none pointer-events-none
+                  "
+                />
+              </motion.div>
+
+              {/* Sparkle */}
+              {/* <motion.div
+                animate={{
+                  opacity: [0.3, 1, 0.3],
+                  scale: [1, 1.6, 1],
+                  y: [-10, 10, -10],
+                }}
                 transition={{
-                  duration: 3.8,
+                  duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut",
                 }}
                 className="
-                  relative z-10
-                  w-[340px]
-                  sm:w-[380px]
-                  md:w-[400px]
-                  lg:w-[420px]
-                  xl:w-[440px]
-                  h-auto
-                  drop-shadow-[0_30px_70px_rgba(0,0,0,0.18)]
-                  select-none pointer-events-none
+                  absolute
+                  top-10
+                  right-20
+                  w-2
+                  h-2
+                  bg-yellow-300
+                  rounded-full
+                  blur-[1px]
                 "
-              />
+              /> */}
 
               {/* Tap hint */}
               <motion.p
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="mt-6 text-[11px] tracking-[0.35em] text-amber-700/80"
+                animate={{
+                  opacity: [0.4, 1, 0.4],
+                  scale: [1, 1.08, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+                className="mt-6 text-[12px] tracking-[0.35em] text-amber-700"
               >
                 TAP TO BEGIN
               </motion.p>
