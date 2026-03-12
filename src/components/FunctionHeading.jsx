@@ -1,21 +1,32 @@
 import { motion } from "framer-motion";
-import {
-  Sparkles,
-  Gift,
-  Music2,
-  Flower2,
-  HeartHandshake,
-  Flame,
-} from "lucide-react";
 
-// ✅ quick navigation functions
 const functions = [
-  { label: "Mehendi", id: "mehendi", Icon: Sparkles, color: "emerald" },
-  { label: "Myra", id: "myra", Icon: Gift, color: "rose" },
-  { label: "Sangeet", id: "sangeet", Icon: Music2, color: "fuchsia" },
-  { label: "Haldi", id: "haldi", Icon: Flower2, color: "amber" },
-  { label: "Varmala", id: "varmala", Icon: HeartHandshake, color: "pink" },
-  { label: "Phera", id: "phera", Icon: Flame, color: "orange" },
+  {
+    label: "Mehendi",
+    id: "mehendi",
+    icon: "/icons/mehendiIcon.svg",
+    color: "emerald",
+  },
+  { label: "Myra", id: "myra", icon: "/icons/myraIcon.svg", color: "rose" },
+  {
+    label: "Sangeet",
+    id: "sangeet",
+    icon: "/icons/sangeetIcon.svg",
+    color: "fuchsia",
+  },
+  { label: "Haldi", id: "haldi", icon: "/icons/haldiIcon.svg", color: "amber" },
+  {
+    label: "Varmala",
+    id: "varmala",
+    icon: "/icons/varmalaIcon.svg",
+    color: "pink",
+  },
+  {
+    label: "Phera",
+    id: "phera",
+    icon: "/icons/pheraIcon.svg",
+    color: "orange",
+  },
 ];
 
 const gradients = {
@@ -105,20 +116,19 @@ export default function FunctionHeading() {
           {/* center line */}
           <div
             className="
-    absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px
-    bg-gradient-to-b from-transparent via-[#C9D7E5]/50 to-transparent
-  "
+              absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px
+              bg-gradient-to-b from-transparent via-[#C9D7E5]/50 to-transparent
+            "
           />
 
           <ul className="space-y-10">
             {functions.map((fn, i) => {
-              const Icon = fn.Icon;
               const isLeft = i % 2 === 0;
 
               return (
                 <li
                   key={fn.id}
-                  className="relative flex items-center cursor-pointer group"
+                  className="relative flex items-center cursor-pointer group active:scale-95"
                   onClick={() => scrollToSection(fn.id)}
                 >
                   {/* LEFT label */}
@@ -129,31 +139,81 @@ export default function FunctionHeading() {
                       </span>
                     </div>
                   )}
-
-                  {/* ICON */}
+                  {/* ICON CIRCLE */}
                   <motion.div
-                    initial={{ scale: 0.92, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ amount: 0.4 }}
-                    whileHover={{ y: -4, scale: 1.1 }}
-                    transition={{ duration: 0.25 }}
+                    /* entry animation (runs once) */
+                    initial={{ opacity: 0, scale: 0.85, y: 10 }}
+                    /* all animations combined */
+                    animate={{
+                      opacity: 1,
+                      scale: [1, 1.05, 1], // breathing
+                      y: [0, -6, 0], // floating
+                    }}
+                    transition={{
+                      opacity: { duration: 0.5 },
+                      scale: {
+                        duration: 2.8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      },
+                      y: {
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      },
+                    }}
+                    whileHover={{
+                      scale: 1.12,
+                      y: -5,
+                    }}
+                    whileTap={{
+                      scale: 0.92,
+                    }}
                     className={`
-                      relative z-10
-                      w-11 h-11 rounded-full
-                      flex items-center justify-center
-                      mx-auto
-                      text-white
-                      shadow-md
-                      border border-white/30
-                      backdrop-blur-sm
-                      transition
-                      ${gradients[fn.color]}
-                      `}
+    relative
+    w-16 h-16
+    rounded-full
+    flex items-center justify-center
+    mx-auto
+    shadow-[0_14px_28px_rgba(0,0,0,0.18)]
+    border border-white/30
+    ${gradients[fn.color]}
+  `}
                   >
-                    {/* glow */}
-                    <span className="absolute inset-0 rounded-full blur-md opacity-30 bg-white/20 group-hover:opacity-60 transition" />
+                    {/* soft breathing glow */}
+                    <motion.span
+                      className="absolute inset-0 rounded-full"
+                      style={{
+                        boxShadow: "0 0 0px rgba(255,255,255,0.6)",
+                      }}
+                      animate={{
+                        boxShadow: [
+                          "0 0 0px rgba(255,255,255,0.3)",
+                          "0 0 18px rgba(255,255,255,0.8)",
+                          "0 0 0px rgba(255,255,255,0.3)",
+                        ],
+                      }}
+                      transition={{
+                        duration: 2.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
 
-                    <Icon size={18} className="relative z-10" />
+                    {/* icon centered and large */}
+                    <motion.img
+                      src={fn.icon}
+                      alt={fn.label}
+                      className="w-[48px] h-[48px] object-contain drop-shadow-lg"
+                      animate={{
+                        rotate: [0, 3, -3, 0],
+                      }}
+                      transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
                   </motion.div>
 
                   {/* RIGHT label */}
@@ -176,65 +236,104 @@ export default function FunctionHeading() {
             {/* center line */}
             <div
               className="
-    absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px
-    bg-gradient-to-r from-transparent via-[#C9D7E5]/50 to-transparent
-  "
+                absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px
+                bg-gradient-to-r from-transparent via-[#C9D7E5]/50 to-transparent
+              "
             />
 
             <ul className="relative flex justify-between items-center">
-              {functions.map((fn) => {
-                const Icon = fn.Icon;
-
-                return (
-                  <li key={fn.id} className="relative z-10">
-                    <button
-                      onClick={() => scrollToSection(fn.id)}
-                      className="
-                group flex flex-col items-center gap-2
-                hover:scale-105 transition
-              "
+              {functions.map((fn) => (
+                <li key={fn.id} className="relative z-10">
+                  <button
+                    onClick={() => scrollToSection(fn.id)}
+                    className="
+                      group flex flex-col items-center gap-2
+                      hover:scale-105 transition
+                    "
+                  >
+                    <motion.div
+                      /* entry animation (runs once) */
+                      initial={{ opacity: 0, scale: 0.85, y: 10 }}
+                      /* all animations combined */
+                      animate={{
+                        opacity: 1,
+                        scale: [1, 1.05, 1], // breathing
+                        y: [0, -6, 0], // floating
+                      }}
+                      transition={{
+                        opacity: { duration: 0.5 },
+                        scale: {
+                          duration: 2.8,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        },
+                        y: {
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        },
+                      }}
+                      whileHover={{
+                        scale: 1.12,
+                        y: -5,
+                      }}
+                      whileTap={{
+                        scale: 0.92,
+                      }}
+                      className={`
+    relative
+    w-16 h-16
+    rounded-full
+    flex items-center justify-center
+    mx-auto
+    shadow-[0_14px_28px_rgba(0,0,0,0.18)]
+    border border-white/30
+    ${gradients[fn.color]}
+  `}
                     >
-                      {/* icon circle */}
-                      <motion.div
-                        initial={{ scale: 0.92, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        viewport={{ amount: 0.4 }}
-                        animate={{ y: [0, -3, 0] }}
-                        transition={{
-                          y: {
-                            duration: 6,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                          },
+                      {/* glow */}
+                      <motion.span
+                        className="absolute inset-0 rounded-full"
+                        style={{
+                          boxShadow: "0 0 0px rgba(255,255,255,0.6)",
                         }}
-                        whileHover={{ scale: 1.12 }}
-                        className={`
-                          relative z-10
-                          w-11 h-11 rounded-full
-                          flex items-center justify-center
-                          mx-auto
-                          text-white
-                          shadow-md
-                          border border-white/30
-                          backdrop-blur-sm
-                          transition
-                          ${gradients[fn.color]}
-                        `}
-                      >
-                        {/* glow */}
-                        <span className="absolute inset-0 rounded-full blur-md opacity-30 bg-white/20 group-hover:opacity-60 transition" />
+                        animate={{
+                          boxShadow: [
+                            "0 0 0px rgba(255,255,255,0.3)",
+                            "0 0 18px rgba(255,255,255,0.8)",
+                            "0 0 0px rgba(255,255,255,0.3)",
+                          ],
+                        }}
+                        transition={{
+                          duration: 2.5,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      />
 
-                        <Icon size={18} className="relative z-10" />
-                      </motion.div>
+                      {/* icon */}
+                      <motion.img
+                        src={fn.icon}
+                        alt={fn.label}
+                        className="w-[48px] h-[48px] object-contain drop-shadow-lg"
+                        animate={{
+                          rotate: [0, 3, -3, 0],
+                        }}
+                        transition={{
+                          duration: 5,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      />
+                    </motion.div>
 
-                      {/* label */}
-                      <span className="text-xs font-medium text-gray-700">
-                        {fn.label}
-                      </span>
-                    </button>
-                  </li>
-                );
-              })}
+                    {/* label */}
+                    <span className="text-xs font-medium text-gray-700">
+                      {fn.label}
+                    </span>
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
