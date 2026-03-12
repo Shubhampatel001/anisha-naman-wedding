@@ -7,9 +7,9 @@ export default function Hero({ data }) {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 scale-[1.15] md:scale-100 transform-gpu">
           <img
-            src="/NAMANANISHA.jpeg"
+            src="/A.png"
             alt="Naman and Anisha"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-[35%]"
             loading="eager"
           />
         </div>
