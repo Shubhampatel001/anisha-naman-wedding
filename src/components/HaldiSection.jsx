@@ -190,7 +190,7 @@ export default function HaldiSection() {
           >
             {/* 📅 Day + Date */}
             <p className="uppercase tracking-[0.35em] text-[11px] text-yellow-700/80 mb-2">
-              Day 3 · 20 April 2026
+              Day 3 · 20 April 2026 · 10:30 AM
             </p>
 
             {/* 🪔 Section eyebrow */}
@@ -209,11 +209,11 @@ export default function HaldiSection() {
             </p>
 
             {/* Time + Dress code */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-4">
               {/* Time */}
-              <span className="px-3 py-1 rounded-full bg-yellow-200/60 text-yellow-900 text-xs font-medium">
+              {/* <span className="px-3 py-1 rounded-full bg-yellow-200/60 text-yellow-900 text-xs font-medium">
                 10:30 AM
-              </span>
+              </span> */}
 
               {/* Dress code */}
               <span className="px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 text-sm font-medium">

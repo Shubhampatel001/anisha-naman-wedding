@@ -179,7 +179,7 @@ export default function SangeetSection() {
           >
             {/* 📅 Day + Date */}
             <p className="uppercase tracking-[0.35em] text-[11px] text-fuchsia-300/80 mb-2">
-              Day 2 · 19 April 2026
+              Day 2 · 19 April 2026 · 6:00 PM
             </p>
 
             {/* 🎶 Eyebrow */}
@@ -196,9 +196,9 @@ export default function SangeetSection() {
             <p className="text-white/70 max-w-md">Its the time to Disco</p>
 
             {/* Time + Dress code */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-4">
               {/* Time */}
-              <span
+              {/* <span
                 className="
       px-3 py-1
       rounded-full
@@ -210,7 +210,7 @@ export default function SangeetSection() {
     "
               >
                 6:00 PM
-              </span>
+              </span> */}
 
               {/* Attire */}
               <span

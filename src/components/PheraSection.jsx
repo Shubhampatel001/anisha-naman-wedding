@@ -140,7 +140,7 @@ export default function PheraSection() {
           >
             {/* 📅 Day + Date */}
             <p className="uppercase tracking-[0.35em] text-[11px] text-orange-700/80 mb-2">
-              Day 3 · 20 April 2026
+              Day 3 · 20 April 2026 · 11:30 PM
             </p>
 
             {/* 🔥 Eyebrow */}
@@ -161,9 +161,9 @@ export default function PheraSection() {
             </p>
 
             {/* Time + Dress code */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-4">
               {/* Time */}
-              <span
+              {/* <span
                 className="
     px-3 py-1
     rounded-full
@@ -175,7 +175,7 @@ export default function PheraSection() {
   "
               >
                 11:30 PM
-              </span>
+              </span> */}
 
               {/* Dress code */}
               <span

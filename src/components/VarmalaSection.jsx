@@ -127,7 +127,7 @@ export default function VarmalaSection() {
           >
             {/* 📅 Day + Date */}
             <p className="uppercase tracking-[0.35em] text-[11px] text-rose-600/80 mb-2">
-              Day 3 · 20 April 2026
+              Day 3 · 20 April 2026 · 7:00 PM
             </p>
 
             {/* 💍 Eyebrow */}
@@ -147,9 +147,9 @@ export default function VarmalaSection() {
             </p>
 
             {/* Time + Dress code */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-4">
               {/* Time */}
-              <span
+              {/* <span
                 className="
       px-3 py-1
       rounded-full
@@ -161,7 +161,7 @@ export default function VarmalaSection() {
     "
               >
                 7:00 PM
-              </span>
+              </span> */}
 
               {/* Attire */}
               <span

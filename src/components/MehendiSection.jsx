@@ -162,7 +162,7 @@ export default function MehendiSection() {
           >
             {/* 📅 Day + Date */}
             <p className="uppercase tracking-[0.35em] text-[11px] text-green-700/80 mb-2">
-              Day 1 · 18 April 2026
+              Day 1 · 18 April 2026 · 5:30 PM
             </p>
 
             {/* 🌿 Eyebrow */}
@@ -181,33 +181,33 @@ export default function MehendiSection() {
             </p>
 
             {/* Time + Dress code */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-4">
               {/* Time */}
-              <span
+              {/* <span
                 className="
-    px-3 py-1
-    rounded-full
-    bg-green-200/60
-    text-green-900
-    text-xs font-medium
-    shadow-sm
-    ring-1 ring-green-300/40
-  "
+                  px-3 py-1
+                  rounded-full
+                  bg-green-200/60
+                  text-green-900
+                  text-xs font-medium
+                  shadow-sm
+                  ring-1 ring-green-300/40
+                "
               >
                 5:30 PM
-              </span>
+              </span> */}
 
               {/* Dress code */}
               <span
                 className="
-    px-4 py-2
-    rounded-full
-    bg-green-100
-    text-green-800
-    text-sm font-medium
-    shadow-sm
-    ring-1 ring-green-200/50
-  "
+                  px-4 py-2
+                  rounded-full
+                  bg-green-100
+                  text-green-800
+                  text-sm font-medium
+                  shadow-sm
+                  ring-1 ring-green-200/50
+                "
               >
                 Shades of Emerald Attire
               </span>
