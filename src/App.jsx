@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { couples } from "./data/couples";
+import { Toaster } from "react-hot-toast";
 
 import IntroOverlay from "./components/IntroOverlay";
 import MusicButton from "./components/MusicButton";
@@ -26,6 +27,21 @@ export default function App() {
 
   return (
     <>
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          duration: 3500,
+          style: {
+            background: "#FFF9F5",
+            color: "#3A3A3A",
+            border: "1px solid #F0D9C8",
+            padding: "14px 18px",
+            borderRadius: "14px",
+            fontSize: "14px",
+            boxShadow: "0 8px 30px rgba(0,0,0,0.08)",
+          },
+        }}
+      />
       <MusicButton audioRef={musicRef} />
 
       <AnimatePresence>

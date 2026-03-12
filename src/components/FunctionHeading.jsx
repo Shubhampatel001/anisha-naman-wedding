@@ -103,11 +103,11 @@ export default function FunctionHeading() {
             variants={fadeUp}
             className="text-3xl md:text-4xl font-serif text-primary mb-4"
           >
-            Program of the Day
+            Wedding Festivities
           </motion.h2>
 
           <motion.p variants={fadeUp} className="text-gray-500 text-sm">
-            What we have planned for you
+            Celebrating the love of Naman & Anisha
           </motion.p>
         </motion.div>
 

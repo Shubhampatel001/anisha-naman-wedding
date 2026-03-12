@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Footer({ data }) {
   return (
-    <footer className="py-20 bg-ivory text-center">
+    <footer className="py-20 bg-[#F5F0EA] text-center">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -12,9 +12,9 @@ export default function Footer({ data }) {
       >
         {/* Divider */}
         <div className="flex items-center justify-center gap-4 mb-6">
-          <span className="w-10 h-px bg-sage/30" />
+          <span className="w-10 h-px bg-amber-300/40" />
           <span className="text-sage text-sm">✦</span>
-          <span className="w-10 h-px bg-sage/30" />
+          <span className="w-10 h-px bg-amber-300/40" />
         </div>
 
         {/* Names */}
@@ -23,9 +23,7 @@ export default function Footer({ data }) {
         </h3>
 
         {/* Hashtag */}
-        <p className="text-xs tracking-[0.3em] text-sage mb-4">
-          #{data?.primary}Weds{data?.secondary}
-        </p>
+        <p className="text-xs tracking-[0.3em] text-sage mb-4">#NaSha</p>
 
         {/* Closing line */}
         <p className="text-xs text-gray-500 leading-relaxed">

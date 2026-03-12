@@ -174,6 +174,7 @@ export default function PheraSection() {
           </motion.div>
         </div>
       </div>
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#FFF8F3] pointer-events-none" />
     </section>
   );
 }

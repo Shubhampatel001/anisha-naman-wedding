@@ -28,7 +28,7 @@ export default function Location() {
           className="flex justify-center mb-10 md:mb-14"
         >
           <img
-            src="/diya.gif"
+            src="/icons/diyaIcon.svg"
             alt="diya"
             className="
               w-full
