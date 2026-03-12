@@ -3,8 +3,21 @@ import { motion } from "framer-motion";
 export default function Hero({ data }) {
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ivory">
-      {/* ===== Background Video Wrapper ===== */}
+      {/* ===== Background Image Wrapper ===== */}
       <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 scale-[1.15] md:scale-100 transform-gpu">
+          <img
+            src="/NAMANANISHA.jpeg"
+            alt="Naman and Anisha"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+          />
+        </div>
+
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/40" />
+      </div>
+      {/* ===== Background Video Wrapper ===== */}
+      {/* <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 scale-[1.15] md:scale-100 transform-gpu">
           <video
             autoPlay
@@ -19,7 +32,7 @@ export default function Hero({ data }) {
           </video>
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/40" />
-      </div>
+      </div> */}
       {/* ===== Content ===== */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -42,7 +55,7 @@ export default function Hero({ data }) {
           We are getting married
         </p>
 
-        <h1 className="text-4xl md:text-7xl font-script mb-6">
+        <h1 className="text-5xl md:text-8xl font-script mb-6">
           {data?.primary} <span className="text-sage/70">&</span>{" "}
           {data?.secondary}
         </h1>
