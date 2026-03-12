@@ -181,7 +181,7 @@ export default function RSVP() {
                   <span
                     className={attendance ? "font-medium" : "text-gray-400"}
                   >
-                    {attendance || "Will you attend?"}
+                    {attendance || "Will you attend? *"}
                   </span>
 
                   <svg
