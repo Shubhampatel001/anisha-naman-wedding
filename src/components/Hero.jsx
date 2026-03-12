@@ -85,9 +85,9 @@ export default function Hero({ data }) {
         "
       >
         {/* Text */}
-        {/* <span className="text-[10px] tracking-[0.38em] uppercase text-white/75">
-          Scroll
-        </span> */}
+        <small className="text-[10px] tracking-[0.38em] uppercase text-white/70">
+          click
+        </small>
         {/* Arrow circle */}
         <motion.div
           animate={{ y: [0, 6, 0] }}
