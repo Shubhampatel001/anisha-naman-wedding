@@ -38,11 +38,11 @@ export default function Hero({ data }) {
           text-white
         "
       >
-        <p className="cedarville-cursive text-lg md:text-xl mb-6 text-white/90">
+        <p className="font-mont text-sm md:text-base tracking-[0.25em] uppercase text-white/90 mb-6">
           We are getting married
         </p>
 
-        <h1 className="text-4xl md:text-7xl font-serif mb-6">
+        <h1 className="text-4xl md:text-7xl font-script mb-6">
           {data?.primary} <span className="text-sage/70">&</span>{" "}
           {data?.secondary}
         </h1>
@@ -52,14 +52,16 @@ export default function Hero({ data }) {
             एकत्वं अनन्तत्वम्
           </p>
 
-          <p className="cedarville-cursive mt-3 text-lg md:text-xl text-white/90">
+          <p className="font-mont mt-3 text-lg md:text-xl text-white/90">
             Two hearts. One promise. A lifetime together.
           </p>
         </div>
 
         <div className="w-20 h-px bg-white/60 mx-auto mb-10" />
 
-        <p className="tracking-widest text-sm text-white/70">20 • 04 • 2026</p>
+        <p className="font-mont tracking-widest text-sm text-white/70">
+          20 • 04 • 2026
+        </p>
       </motion.div>
 
       {/* Scroll Indicator */}

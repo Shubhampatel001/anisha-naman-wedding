@@ -194,9 +194,9 @@ export default function HaldiSection() {
             </p>
 
             {/* 🪔 Section eyebrow */}
-            <p className="uppercase tracking-[0.35em] text-xs text-yellow-700 mb-3">
+            {/* <p className="uppercase tracking-[0.35em] text-xs text-yellow-700 mb-3">
               Wedding Festivity
-            </p>
+            </p> */}
 
             {/* 🎯 Main title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-yellow-900 mb-4">

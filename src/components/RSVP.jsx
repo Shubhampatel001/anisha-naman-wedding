@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 
@@ -8,18 +8,31 @@ const FORM_URL =
 export default function RSVP() {
   const [submitted, setSubmitted] = useState(false);
   const [attendance, setAttendance] = useState("");
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setOpen(false);
+    };
+
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   const handleSubmit = () => {
     setSubmitted(true);
     toast.custom((t) => (
       <div
         className={`
-      px-6 py-4 rounded-xl shadow-lg
-      bg-[#FFF9F5] border border-[#F0D9C8]
-      text-gray-700
-      font-medium
-      ${t.visible ? "animate-enter" : "animate-leave"}
-    `}
+          px-6 py-4 rounded-xl shadow-lg
+          bg-[#FFF9F5] border border-[#F0D9C8]
+          text-gray-700
+          font-medium
+          ${t.visible ? "animate-enter" : "animate-leave"}
+        `}
       >
         ✨ RSVP received — see you at the wedding!
       </div>
@@ -146,35 +159,77 @@ export default function RSVP() {
               />
 
               {/* RESPONSE */}
-              <p className="text-sm text-gray-700 font-medium mt-2">
-                Your Response *
-              </p>
 
               <input type="hidden" name="entry.1439665661" value={attendance} />
 
-              <div className="flex gap-3 justify-center">
-                {["Yes", "Maybe", "No"].map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    onClick={() => setAttendance(option)}
-                    className={`px-4 py-2 rounded-xl text-sm font-medium transition
-                    ${
-                      option === "Yes"
-                        ? "bg-green-100 text-green-700"
-                        : option === "Maybe"
-                          ? "bg-yellow-100 text-yellow-700"
-                          : "bg-red-100 text-red-700"
-                    }
-                    ${
-                      attendance === option
-                        ? "ring-2 ring-black/20 scale-[1.03]"
-                        : ""
-                    }`}
+              <div className="relative text-left">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setOpen((o) => !o);
+                  }}
+                  className="
+                    w-full px-4 py-3 rounded-xl
+                    bg-[#FFF9F5] text-gray-800
+                    border border-[#F0D9C8] shadow-sm
+                    flex items-center justify-between
+                    focus:outline-none focus:ring-2 focus:ring-amber-300
+                    transition-all duration-200
+                  "
+                >
+                  <span
+                    className={attendance ? "font-medium" : "text-gray-400"}
                   >
-                    {option}
-                  </button>
-                ))}
+                    {attendance || "Will you attend?"}
+                  </span>
+
+                  <svg
+                    className={`w-4 h-4 text-gray-500 transition-transform ${
+                      open ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                {open && (
+                  <div
+                    className="
+                      absolute z-20 mt-2 w-full
+                      rounded-xl bg-white
+                      shadow-lg ring-1 ring-black/5
+                      overflow-hidden
+                    "
+                  >
+                    {["Yes, happily!", "Sorry, can’t make it"].map((option) => (
+                      <button
+                        key={option}
+                        type="button"
+                        onClick={() => {
+                          setAttendance(option);
+                          setOpen(false);
+                        }}
+                        className="
+                          w-full text-left px-4 py-3
+                          text-gray-700
+                          hover:bg-amber-50
+                          transition-colors
+                        "
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* MESSAGE */}
@@ -188,7 +243,17 @@ export default function RSVP() {
               {/* SUBMIT */}
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-amber-500 text-white font-medium shadow-md hover:bg-amber-600 transition-all duration-300"
+                className="
+                  w-full py-3 rounded-xl
+                  text-amber-900 font-semibold
+                  bg-gradient-to-r from-amber-200 to-amber-300
+                  border border-amber-300/50
+                  shadow-[0_6px_18px_rgba(217,119,6,0.15)]
+                  hover:shadow-[0_10px_25px_rgba(217,119,6,0.25)]
+                  hover:scale-[1.01]
+                  active:scale-[0.98]
+                  transition-all duration-300
+                  "
               >
                 Submit RSVP
               </button>

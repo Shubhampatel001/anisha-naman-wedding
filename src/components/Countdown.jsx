@@ -77,6 +77,20 @@ export default function Countdown() {
       id="countdown"
       className="relative py-28 bg-[#9FB4C7] text-white text-center overflow-hidden border-b border-transparent"
     >
+      <div className="absolute -top-32 left-0 right-0 h-48 bg-gradient-to-b from-black/70 via-black/40 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-56 bg-gradient-to-b from-[#223448]/50 to-transparent blur-xl pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(8)].map((_, i) => (
+          <span
+            key={i}
+            className="absolute w-[2px] h-[2px] bg-white/40 rounded-full"
+            style={{
+              left: `${10 + i * 10}%`,
+              top: `${30 + (i % 3) * 20}%`,
+            }}
+          />
+        ))}
+      </div>
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 16 }}

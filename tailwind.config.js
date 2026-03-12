@@ -15,6 +15,9 @@ export default {
       fontFamily: {
         serif: ["Playfair Display", "serif"],
         sans: ["Inter", "sans-serif"],
+        mont: ['Montserrat', 'sans-serif'],
+        script: ['CitadelScript', 'cursive'],
+        cursive: ['Cedarville Cursive', 'cursive'],
       }
     },
   },

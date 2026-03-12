@@ -166,13 +166,13 @@ export default function MehendiSection() {
             </p>
 
             {/* 🌿 Eyebrow */}
-            <p className="uppercase tracking-[0.35em] text-xs text-green-700 mb-3">
+            {/* <p className="uppercase tracking-[0.35em] text-xs text-green-700 mb-3">
               Wedding Festivity
-            </p>
+            </p> */}
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(1.9rem,6vw,3rem)] font-serif text-green-900 mb-4">
-              Mehfil-e-Mehendi
+              Mehfil-e-Mehendi <br /> (Mehendi)
             </h2>
 
             {/* ⏰ Time pill */}

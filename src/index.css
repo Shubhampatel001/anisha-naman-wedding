@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "CitadelScript";
+  src: url("/fonts/citadel-script.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -11,7 +18,7 @@ body {
   @apply bg-ivory text-neutral-800;
 
   /* Better neutral system stack */
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: "Montserrat", ui-sans-serif, system-ui;
 
   overflow-x: hidden;
   background: #F5F0EA;
@@ -52,10 +59,6 @@ video {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-.cedarville-cursive {
-  font-family: "Cedarville Cursive", cursive;
 }
 
 section {

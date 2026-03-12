@@ -144,9 +144,9 @@ export default function PheraSection() {
             </p>
 
             {/* 🔥 Eyebrow */}
-            <p className="uppercase tracking-[0.35em] text-xs text-orange-700 mb-3">
+            {/* <p className="uppercase tracking-[0.35em] text-xs text-orange-700 mb-3">
               The Sacred Union
-            </p>
+            </p> */}
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-rose-900 mb-4">

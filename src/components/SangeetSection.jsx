@@ -183,9 +183,9 @@ export default function SangeetSection() {
             </p>
 
             {/* 🎶 Eyebrow */}
-            <p className="uppercase tracking-[0.35em] text-xs text-fuchsia-300 mb-3">
+            {/* <p className="uppercase tracking-[0.35em] text-xs text-fuchsia-300 mb-3">
               Festive Celebrations
-            </p>
+            </p> */}
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif mb-4">
