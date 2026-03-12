@@ -17,6 +17,7 @@ import MyraSection from "./components/MyraSection";
 import PheraSection from "./components/PheraSection";
 import SangeetSection from "./components/SangeetSection";
 import VarmalaSection from "./components/VarmalaSection";
+import BackToTimeline from "./components/BackToTimeline";
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -57,19 +58,15 @@ export default function App() {
       <Countdown />
       <Location />
 
-      <FunctionHeading />
+      <FunctionHeading id="timeline" />
 
-      <MehendiSection />
-
-      <MyraSection />
-
-      <SangeetSection />
-
-      <HaldiSection />
-
-      <VarmalaSection />
-
-      <PheraSection />
+      <MehendiSection id="mehendi" />
+      <MyraSection id="myra" />
+      <SangeetSection id="sangeet" />
+      <HaldiSection id="haldi" />
+      <VarmalaSection id="varmala" />
+      <PheraSection id="phera" />
+      <BackToTimeline />
 
       <RSVP />
 
