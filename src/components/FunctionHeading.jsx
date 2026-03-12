@@ -170,15 +170,15 @@ export default function FunctionHeading() {
                       scale: 0.92,
                     }}
                     className={`
-    relative
-    w-16 h-16
-    rounded-full
-    flex items-center justify-center
-    mx-auto
-    shadow-[0_14px_28px_rgba(0,0,0,0.18)]
-    border border-white/30
-    ${gradients[fn.color]}
-  `}
+                      relative
+                      w-16 h-16
+                      rounded-full
+                      flex items-center justify-center
+                      mx-auto
+                      shadow-[0_14px_28px_rgba(0,0,0,0.18)]
+                      border border-white/30
+                      ${gradients[fn.color]}
+                    `}
                   >
                     {/* soft breathing glow */}
                     <motion.span

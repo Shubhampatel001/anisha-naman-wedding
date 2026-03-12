@@ -108,21 +108,42 @@ export default function MyraSection() {
               Rishto ka Rangmanch <br /> (Myra)
             </h2>
 
-            {/* ⏰ Time pill */}
-            <div className="mb-4">
-              <span className="inline-block px-3 py-1 rounded-full bg-pink-200/60 text-pink-900 text-xs font-medium shadow-sm ring-1 ring-pink-300/40">
-                10:00 AM
-              </span>
-            </div>
-
             {/* 📝 Description */}
             <p className="text-gray-600 max-w-md md:max-w-lg mx-auto md:mx-0">
               Maternal blessings wrapped in warmth and traditions
             </p>
 
-            {/* 👗 Optional attire pill (recommended for consistency) */}
-            <div className="mt-6 inline-block px-4 py-2 rounded-full bg-pink-100 text-pink-800 text-sm">
-              Traditional Attire
+            {/* Time + Dress code */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+              {/* Time */}
+              <span
+                className="
+    px-3 py-1
+    rounded-full
+    bg-pink-200/60
+    text-pink-900
+    text-xs font-medium
+    shadow-sm
+    ring-1 ring-pink-300/40
+  "
+              >
+                10:00 AM
+              </span>
+
+              {/* Dress code */}
+              <span
+                className="
+    px-4 py-2
+    rounded-full
+    bg-pink-100
+    text-pink-800
+    text-sm font-medium
+    shadow-sm
+    ring-1 ring-pink-200/50
+  "
+              >
+                Blush & Pastel Palette Attire
+              </span>
             </div>
           </motion.div>
         </div>

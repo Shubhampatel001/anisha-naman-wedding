@@ -203,21 +203,22 @@ export default function HaldiSection() {
               Rangpreet <br /> (Haldi)
             </h2>
 
-            {/* ⏰ Time pill */}
-            <div className="mb-4">
-              <span className="inline-block px-3 py-1 rounded-full bg-yellow-200/60 text-yellow-900 text-xs font-medium">
-                10:30 AM
-              </span>
-            </div>
-
             {/* 📝 Description */}
             <p className="text-gray-600 leading-relaxed max-w-md mx-auto md:mx-0">
               Rang haldi ke, jazbaat dil ke
             </p>
 
-            {/* 👗 Dress code */}
-            <div className="mt-6 inline-block px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 text-sm">
-              Yellow Attire
+            {/* Time + Dress code */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+              {/* Time */}
+              <span className="px-3 py-1 rounded-full bg-yellow-200/60 text-yellow-900 text-xs font-medium">
+                10:30 AM
+              </span>
+
+              {/* Dress code */}
+              <span className="px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 text-sm font-medium">
+                Sunshine Yellow Attire
+              </span>
             </div>
           </motion.div>
         </div>

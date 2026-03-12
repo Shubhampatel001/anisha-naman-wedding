@@ -157,7 +157,7 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
 
                 {/* Floating Ganesh */}
                 <motion.img
-                  src="/lordGaneshJiIntro.png"
+                  src="/lordGaneshJiIntro.webp"
                   alt="Ganesh"
                   animate={{
                     y: [0, -12, 0],

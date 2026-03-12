@@ -175,21 +175,42 @@ export default function MehendiSection() {
               Mehfil-e-Mehendi <br /> (Mehendi)
             </h2>
 
-            {/* ⏰ Time pill */}
-            <div className="mb-4">
-              <span className="inline-block px-3 py-1 rounded-full bg-green-200/60 text-green-900 text-xs font-medium shadow-sm ring-1 ring-green-300/40">
-                5:30 PM
-              </span>
-            </div>
-
             {/* 📝 Description */}
             <p className="text-gray-600 max-w-md mx-auto md:mx-0">
               Intricate henna whisphering stories of love
             </p>
 
-            {/* 👗 Dress code */}
-            <div className="mt-6 inline-block px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm">
-              Green Attire
+            {/* Time + Dress code */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+              {/* Time */}
+              <span
+                className="
+    px-3 py-1
+    rounded-full
+    bg-green-200/60
+    text-green-900
+    text-xs font-medium
+    shadow-sm
+    ring-1 ring-green-300/40
+  "
+              >
+                5:30 PM
+              </span>
+
+              {/* Dress code */}
+              <span
+                className="
+    px-4 py-2
+    rounded-full
+    bg-green-100
+    text-green-800
+    text-sm font-medium
+    shadow-sm
+    ring-1 ring-green-200/50
+  "
+              >
+                Shades of Emerald Attire
+              </span>
             </div>
           </motion.div>
         </div>

@@ -99,7 +99,7 @@ export default function Countdown() {
         transition={{ duration: 1, ease: "easeOut" }}
         className="text-3xl md:text-4xl font-serif text-primary mb-12 text-center"
       >
-        Counting down to forever
+        Countdown to forever
       </motion.h2>
 
       {/* Countdown */}

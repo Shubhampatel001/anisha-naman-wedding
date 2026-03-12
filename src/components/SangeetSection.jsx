@@ -192,19 +192,41 @@ export default function SangeetSection() {
               Nach Baliye Nights <br /> (Sangeet)
             </h2>
 
-            {/* ⏰ Time pill */}
-            <div className="mb-4">
-              <span className="inline-block px-3 py-1 rounded-full bg-fuchsia-500/20 text-fuchsia-200 text-xs font-medium ring-1 ring-fuchsia-400/30">
-                6:00 PM
-              </span>
-            </div>
-
             {/* 📝 Description */}
             <p className="text-white/70 max-w-md">Its the time to Disco</p>
 
-            {/* 👗 Attire */}
-            <div className="mt-6 inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm">
-              Indo-Western
+            {/* Time + Dress code */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+              {/* Time */}
+              <span
+                className="
+      px-3 py-1
+      rounded-full
+      bg-fuchsia-500/20
+      text-fuchsia-200
+      text-xs font-medium
+      ring-1 ring-fuchsia-400/30
+      shadow-sm
+    "
+              >
+                6:00 PM
+              </span>
+
+              {/* Attire */}
+              <span
+                className="
+      px-4 py-2
+      rounded-full
+      bg-white/10
+      border border-white/20
+      text-white/90
+      text-sm font-medium
+      backdrop-blur-sm
+      shadow-sm
+    "
+              >
+                Glitz, Glam & Shimmer Attire
+              </span>
             </div>
           </motion.div>
 

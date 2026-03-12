@@ -155,21 +155,42 @@ export default function PheraSection() {
               Saath janam <br /> (Phera)
             </h2>
 
-            {/* ⏰ Time pill */}
-            <div className="mb-4">
-              <span className="inline-block px-3 py-1 rounded-full bg-orange-200/60 text-orange-900 text-xs font-medium shadow-sm ring-1 ring-orange-300/40">
-                11:30 PM
-              </span>
-            </div>
-
             {/* 📝 Description */}
             <p className="text-gray-600 max-w-md md:max-w-lg mx-auto md:mx-0">
               Sacred vows around the eternal fire
             </p>
 
-            {/* 👗 Attire pill (recommended for visual rhythm) */}
-            <div className="mt-6 inline-block px-4 py-2 rounded-full bg-orange-100 text-orange-800 text-sm">
-              Traditional Attire
+            {/* Time + Dress code */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+              {/* Time */}
+              <span
+                className="
+    px-3 py-1
+    rounded-full
+    bg-orange-200/60
+    text-orange-900
+    text-xs font-medium
+    shadow-sm
+    ring-1 ring-orange-300/40
+  "
+              >
+                11:30 PM
+              </span>
+
+              {/* Dress code */}
+              <span
+                className="
+    px-4 py-2
+    rounded-full
+    bg-orange-100
+    text-orange-800
+    text-sm font-medium
+    shadow-sm
+    ring-1 ring-orange-200/50
+  "
+              >
+                Classic Ethnic Attire
+              </span>
             </div>
           </motion.div>
         </div>

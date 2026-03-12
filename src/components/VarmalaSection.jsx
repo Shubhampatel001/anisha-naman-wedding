@@ -141,21 +141,42 @@ export default function VarmalaSection() {
               (Varmala)
             </h2>
 
-            {/* ⏰ Time pill */}
-            <div className="mb-4">
-              <span className="inline-block px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-medium ring-1 ring-rose-200">
-                7:00 PM
-              </span>
-            </div>
-
             {/* 📝 Description */}
             <p className="text-gray-600 max-w-md mx-auto md:mx-0">
               Two souls choosing each other forever
             </p>
 
-            {/* 👗 Attire */}
-            <div className="mt-6 inline-block px-4 py-2 rounded-full bg-rose-100 text-rose-800 text-sm">
-              Traditional Attire
+            {/* Time + Dress code */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+              {/* Time */}
+              <span
+                className="
+      px-3 py-1
+      rounded-full
+      bg-rose-100
+      text-rose-700
+      text-xs font-medium
+      ring-1 ring-rose-200
+      shadow-sm
+    "
+              >
+                7:00 PM
+              </span>
+
+              {/* Attire */}
+              <span
+                className="
+      px-4 py-2
+      rounded-full
+      bg-rose-100
+      text-rose-800
+      text-sm font-medium
+      ring-1 ring-rose-200/70
+      shadow-sm
+    "
+              >
+                Traditional Elegance Attire
+              </span>
             </div>
           </motion.div>
         </div>
