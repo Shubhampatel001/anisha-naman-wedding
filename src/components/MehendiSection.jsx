@@ -5,49 +5,94 @@ export default function MehendiSection() {
   return (
     <section
       id="mehendi"
-      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-[#F4F8F2] to-[#FFF6FB]"
+      className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-b from-[#F4F8F2] to-[#FFF6FB]"
     >
-      {/* soft green aura */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] blur-[110px] bg-green-200/25 rounded-full" />
-      </div>
-      {/* 🌿 side florals */}
+      {/* PREMIUM BACKGROUND SYSTEM */}
       <motion.img
-        src="/floral-green-left.png"
-        loading="lazy"
-        decoding="async"
-        style={{ transform: `translate3d(0, ${floralOffset * 0.6}px, 0)` }}
-        className="
-          absolute left-[-20px] md:left-0 top-24
-          w-28 sm:w-32 md:w-40
-          opacity-25 md:opacity-30
-          pointer-events-none
-        "
-      />
-      <motion.img
-        src="/floral-green-right.png"
-        transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
-        className="
-    block lg:block
-    scale-75 md:scale-90
-    lg:scale-100
-    absolute right-0 top-40
-    w-40 opacity-30
-    pointer-events-none
-  "
-      />
-      {/* ✨ floating paisley */}
-      {/* <motion.img
         src="/paisley-green.png"
         animate={{ y: [0, -12, 0], rotate: [0, 6, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-[8%] top-[22%] w-10 opacity-25 pointer-events-none"
+      />
+      {/* /* 🌿 soft central aura */}
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+        <div
+          className="
+    w-[280px] h-[280px]
+    md:w-[700px] md:h-[700px]
+    bg-green-200/30
+    blur-[120px]
+    rounded-full
+  "
+        />
+      </div>
+
+      {/* 🌿 subtle gradient wash */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="
+    absolute left-0 top-0 h-full w-40
+    bg-gradient-to-r from-green-100/40 to-transparent
+  "
+        />
+        <div
+          className="
+    absolute right-0 top-0 h-full w-40
+    bg-gradient-to-l from-green-100/40 to-transparent
+  "
+        />
+      </div>
+      {/* 🌿 left floating floral */}
+      <motion.img
+        src="/floral-green-left.png"
+        style={{ transform: `translate3d(0, ${floralOffset * 0.5}px,0)` }}
+        animate={{ y: [0, -18, 0], rotate: [0, 2, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         className="
     absolute
-    left-[8%] top-[22%]
-    w-10 opacity-25
+    left-[-30px] md:left-0
+    top-[25%]
+    w-28 sm:w-32 md:w-40
+    opacity-30
     pointer-events-none
   "
-      /> */}
+      />
+      {/* 🌿 right floating floral */}
+      <motion.img
+        src="/floral-green-right.png"
+        animate={{ y: [0, -16, 0], rotate: [0, -2, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="
+    absolute
+    right-[-25px] md:right-0
+    bottom-[20%]
+    w-28 sm:w-32 md:w-40
+    opacity-30
+    pointer-events-none
+  "
+      />
+      {/* ✨ soft floating particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              y: [-20, 40],
+              opacity: [0.2, 0.6, 0.2],
+            }}
+            transition={{
+              duration: 6 + i,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute w-[3px] h-[3px] rounded-full bg-green-500/40 blur-[0.5px]"
+            style={{
+              left: `${20 + i * 18}%`,
+              top: `${30 + i * 10}%`,
+            }}
+          />
+        ))}
+      </div>
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
           animate={{ y: [0, -20, 0] }}
@@ -70,16 +115,16 @@ export default function MehendiSection() {
               src="/mehendi-illustration.png"
               alt="Mehendi ceremony illustration"
               className="
-      w-[240px]
-      sm:w-[280px]
-      md:w-[320px]
-      lg:w-[360px]
-      xl:w-[400px]
-      h-auto
-      drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
-      select-none
-      pointer-events-none
-    "
+                w-[240px]
+                sm:w-[280px]
+                md:w-[320px]
+                lg:w-[360px]
+                xl:w-[400px]
+                h-auto
+                drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
+                select-none
+                pointer-events-none
+              "
             /> */}
 
             <video
@@ -90,17 +135,17 @@ export default function MehendiSection() {
               preload="none"
               className="
               rounded-[80px] 
-    transition-all duration-500
-    w-[240px]
-    sm:w-[280px]
-    md:w-[320px]
-    lg:w-[360px]
-    xl:w-[400px]
-    h-auto
-    drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
-    select-none
-    pointer-events-none
-  "
+                transition-all duration-500
+                w-[270px] 
+                sm:w-[300px] 
+                md:w-[320px] 
+                lg:w-[360px]
+                xl:w-[400px]
+                h-auto
+                drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
+                select-none
+                pointer-events-none
+              "
             >
               <source src="/mehendi.webm" type="video/webm" />
               Your browser does not support the video tag.
@@ -126,14 +171,14 @@ export default function MehendiSection() {
             </p>
 
             {/* 🎯 Title */}
-            <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-green-900 mb-4">
+            <h2 className="text-[clamp(1.9rem,6vw,3rem)] font-serif text-green-900 mb-4">
               Mehfil-e-Mehendi
             </h2>
 
             {/* ⏰ Time pill */}
             <div className="mb-4">
               <span className="inline-block px-3 py-1 rounded-full bg-green-200/60 text-green-900 text-xs font-medium shadow-sm ring-1 ring-green-300/40">
-                4:00 PM
+                5:30 PM
               </span>
             </div>
 

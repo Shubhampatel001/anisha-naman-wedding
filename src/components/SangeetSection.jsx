@@ -30,7 +30,7 @@ export default function SangeetSection() {
       </div>
       {/* 💃 equalizer */}
       <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none flex items-end justify-center gap-1 opacity-40">
-        {[...Array(10)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <motion.span
             key={i}
             animate={{ height: [8, 24 + (i % 4) * 6, 10] }}
@@ -39,13 +39,96 @@ export default function SangeetSection() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="w-[3px] bg-fuchsia-400/70 rounded-full"
+            className="w-[5px] bg-gradient-to-t from-fuchsia-500 to-purple-300 rounded-full"
+          />
+        ))}
+      </div>
+      <motion.div
+        animate={{ rotate: [-10, -6, -10] }}
+        transition={{ duration: 12, repeat: Infinity }}
+        className="absolute left-[20%] top-0 w-[2px] h-[400px] bg-gradient-to-b from-transparent via-fuchsia-300 to-transparent opacity-30"
+      />
+      {/* 🌟 subtle shimmer */}
+
+      <motion.div
+        animate={{ opacity: [0.4, 0.8, 0.4] }}
+        transition={{ duration: 6, repeat: Infinity }}
+        className="
+  absolute
+  left-1/2
+  top-[35%]
+  -translate-x-1/2
+  w-[260px]
+  h-[260px]
+  bg-fuchsia-400/25
+  blur-[120px]
+  rounded-full
+  pointer-events-none
+"
+      />
+      {/* 🎇 moving stage lights */}
+
+      <motion.div
+        animate={{ rotate: [0, 6, -6, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="
+  absolute
+  left-[10%]
+  top-[10%]
+  w-[420px]
+  h-[420px]
+  bg-fuchsia-500/20
+  blur-[140px]
+  rounded-full
+  pointer-events-none
+"
+      />
+
+      <motion.div
+        animate={{ rotate: [0, -8, 8, 0] }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+        className="
+  absolute
+  right-[8%]
+  bottom-[12%]
+  w-[420px]
+  h-[420px]
+  bg-purple-500/20
+  blur-[140px]
+  rounded-full
+  pointer-events-none
+"
+      />
+      {/* ✨ floating bokeh lights */}
+
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <motion.span
+            key={i}
+            animate={{
+              y: [0, -40, 0],
+              scale: [1, 1.2, 1],
+              opacity: [0.25, 0.8, 0.25],
+            }}
+            transition={{
+              duration: 8 + i,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute rounded-full bg-fuchsia-300"
+            style={{
+              width: `${6 + i * 2}px`,
+              height: `${6 + i * 2}px`,
+              left: `${10 + i * 15}%`,
+              top: `${20 + (i % 3) * 20}%`,
+              filter: "blur(1px)",
+            }}
           />
         ))}
       </div>
       {/* ✨ floating lights */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(3)].map((_, i) => (
+        {[...Array(9)].map((_, i) => (
           <motion.span
             key={i}
             animate={{ y: [0, -30, 0], opacity: [0.3, 0.8, 0.3] }}
@@ -65,7 +148,7 @@ export default function SangeetSection() {
       </div>
       {/* ✨ particles */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(4)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <motion.span
             key={i}
             animate={{ y: [0, -25, 0], opacity: [0.2, 0.6, 0.2] }}
@@ -106,7 +189,7 @@ export default function SangeetSection() {
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif mb-4">
-              Nach Baliye Nights <br /> Sangeet
+              Nach Baliye Nights <br /> (Sangeet)
             </h2>
 
             {/* ⏰ Time pill */}
@@ -134,7 +217,7 @@ export default function SangeetSection() {
             animate={{ y: [0, -5, 0] }}
             className="flex justify-center order-1 md:order-2"
           >
-            <img
+            {/* <img
               loading="lazy"
               decoding="async"
               src="/sangeetF.webp"
@@ -150,7 +233,29 @@ export default function SangeetSection() {
                 select-none
                 pointer-events-none
                 "
-            />
+            /> */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="none"
+              // poster="/myra-poster.webp"
+              className="
+                rounded-[80px]
+                w-[240px]
+                sm:w-[280px]
+                md:w-[320px]
+                lg:w-[360px]
+                xl:w-[400px]
+                h-auto
+                drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
+                select-none
+                pointer-events-none
+              "
+            >
+              <source src="/sangeet.webm" type="video/webm" />
+            </video>
           </motion.div>
         </div>
       </div>

@@ -10,6 +10,11 @@ export default function PheraSection() {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-orange-200/25 rounded-full blur-[110px]" />
       </div>
+      <motion.div
+        animate={{ y: [0, -40], opacity: [0.2, 0] }}
+        transition={{ duration: 6, repeat: Infinity }}
+        className="absolute left-1/2 bottom-32 w-24 h-16 bg-orange-200/20 blur-2xl rounded-full"
+      />
       {/* 🔥 fire glow flicker */}
       <motion.div
         animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.05, 1] }}
@@ -22,7 +27,7 @@ export default function PheraSection() {
       />
       {/* ✨ embers */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(3)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <motion.span
             key={i}
             animate={{ y: [0, -60], opacity: [0.6, 0] }}
@@ -39,7 +44,7 @@ export default function PheraSection() {
       </div>
       {/* 🔥 warm havan particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(5)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <motion.span
             key={i}
             animate={{
@@ -84,7 +89,7 @@ export default function PheraSection() {
             animate={{ y: [0, -5, 0] }}
             className="flex justify-center order-1 md:order-2"
           >
-            <img
+            {/* <img
               loading="lazy"
               decoding="async"
               src="/pheraF.webp"
@@ -100,7 +105,29 @@ export default function PheraSection() {
                 select-none
                 pointer-events-none
               "
-            />
+            /> */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="none"
+              className="rounded-[80px] 
+                transition-all duration-500
+                w-[240px]
+                sm:w-[280px]
+                md:w-[320px]
+                lg:w-[360px]
+                xl:w-[400px]
+                h-auto
+                drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
+                select-none
+                pointer-events-none
+              "
+            >
+              <source src="/phera.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
           </motion.div>
 
           {/* 📝 Content */}
@@ -125,13 +152,13 @@ export default function PheraSection() {
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-rose-900 mb-4">
               Saath vachan,
               <br />
-              Saath janam <br /> Phera
+              Saath janam <br /> (Phera)
             </h2>
 
             {/* ⏰ Time pill */}
             <div className="mb-4">
               <span className="inline-block px-3 py-1 rounded-full bg-orange-200/60 text-orange-900 text-xs font-medium shadow-sm ring-1 ring-orange-300/40">
-                9:00 PM
+                11:30 PM
               </span>
             </div>
 

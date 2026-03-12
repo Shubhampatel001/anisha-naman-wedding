@@ -15,7 +15,7 @@ export default function VarmalaSection() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* 🌸 premium falling petals */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {[...Array(5)].map((_, i) => (
+            {[...Array(15)].map((_, i) => (
               <motion.div
                 key={`petal-${i}`}
                 initial={{ y: -60, opacity: 0 }}
@@ -74,7 +74,7 @@ export default function VarmalaSection() {
             animate={{ y: [0, -4, 0] }} // very subtle
             className="flex justify-center order-1"
           >
-            <img
+            {/* <img
               loading="lazy"
               decoding="async"
               src="/varmalaF.webp"
@@ -90,7 +90,29 @@ export default function VarmalaSection() {
                 select-none
                 pointer-events-none
               "
-            />
+            /> */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="none"
+              // poster="/myra-poster.webp"
+              className="
+                rounded-[80px]
+                w-[240px]
+                sm:w-[280px]
+                md:w-[320px]
+                lg:w-[360px]
+                xl:w-[400px]
+                h-auto
+                drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
+                select-none
+                pointer-events-none
+              "
+            >
+              <source src="/varmala.webm" type="video/webm" />
+            </video>
           </motion.div>
 
           {/* Content (RIGHT) */}
@@ -116,13 +138,13 @@ export default function VarmalaSection() {
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-rose-900 mb-3">
               Shub-Aarambh <br />
-              Varmala
+              (Varmala)
             </h2>
 
             {/* ⏰ Time pill */}
             <div className="mb-4">
               <span className="inline-block px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-medium ring-1 ring-rose-200">
-                6:30 PM
+                7:00 PM
               </span>
             </div>
 

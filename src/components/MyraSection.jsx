@@ -10,7 +10,18 @@ export default function MyraSection() {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-pink-200/25 rounded-full blur-[110px]" />
       </div>
-
+      {[...Array(10)].map((_, i) => (
+        <motion.span
+          key={i}
+          animate={{ y: [0, -25, 0], rotate: [0, 180] }}
+          transition={{ duration: 6 + i, repeat: Infinity }}
+          className="absolute w-[4px] h-[4px] bg-pink-300 rounded-full"
+          style={{
+            left: `${15 + i * 18}%`,
+            top: `${25 + (i % 2) * 25}%`,
+          }}
+        />
+      ))}
       {/* ✨ premium sparkle */}
       <motion.span
         animate={{
@@ -94,7 +105,7 @@ export default function MyraSection() {
 
             {/* 🎯 Title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-rose-900 mb-4">
-              Rishto ka Rangmanch <br /> Myra
+              Rishto ka Rangmanch <br /> (Myra)
             </h2>
 
             {/* ⏰ Time pill */}

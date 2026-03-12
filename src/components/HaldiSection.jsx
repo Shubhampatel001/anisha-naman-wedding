@@ -9,9 +9,42 @@ export default function HaldiSection() {
       className="relative py-24 md:py-32 overflow-hidden bg-[#FFF7E6]"
     >
       {/* soft radial glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-yellow-200/25 rounded-full blur-[110px]" />
+      {/* ✨ glowing haldi particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[...Array(16)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-yellow-400/60"
+            style={{
+              width: `${2 + Math.random() * 3}px`,
+              height: `${2 + Math.random() * 3}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -40, 0],
+              opacity: [0.2, 0.8, 0.2],
+            }}
+            transition={{
+              duration: 3 + i,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
       </div>
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          animate={{ y: [0, -20, 0], opacity: [0.2, 0.6, 0.2] }}
+          transition={{ duration: 4 + i, repeat: Infinity }}
+          className="absolute w-3 h-3 bg-yellow-400/30 rounded-full blur-md"
+          style={{
+            left: `${15 + i * 14}%`,
+            top: `${20 + i * 8}%`,
+          }}
+        />
+      ))}
       {/* 🌞 warm edge gradients */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-yellow-100/40 to-transparent" />
@@ -45,7 +78,7 @@ export default function HaldiSection() {
   "
       />
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(4)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
             animate={{
@@ -105,23 +138,48 @@ export default function HaldiSection() {
               playsInline
               preload="none"
               className="rounded-[80px] 
-    transition-all duration-500
-    w-[240px]
-    sm:w-[280px]
-    md:w-[320px]
-    lg:w-[360px]
-    xl:w-[400px]
-    h-auto
-    drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
-    select-none
-    pointer-events-none
-  "
+                transition-all duration-500
+                w-[240px]
+                sm:w-[280px]
+                md:w-[320px]
+                lg:w-[360px]
+                xl:w-[400px]
+                h-auto
+                drop-shadow-[0_25px_60px_rgba(0,0,0,0.15)]
+                select-none
+                pointer-events-none
+              "
             >
               <source src="/haldi.webm" type="video/webm" />
               Your browser does not support the video tag.
             </video>
           </motion.div>
-
+          {/* 🌼 Floating marigold petals */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            {[...Array(9)].map((_, i) => (
+              <motion.img
+                key={i}
+                src="/marigold-left.png"
+                className="absolute w-3 md:w-4 opacity-60"
+                style={{
+                  left: `${10 + i * 12}%`,
+                  top: "-40px",
+                }}
+                animate={{
+                  y: [0, 700],
+                  x: [0, i % 2 ? 20 : -20],
+                  rotate: [0, 180],
+                  opacity: [0, 0.7, 0],
+                }}
+                transition={{
+                  duration: 7 + i * 0.8,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: i * 0.8,
+                }}
+              />
+            ))}
+          </div>
           {/* 📝 RIGHT — Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -142,13 +200,13 @@ export default function HaldiSection() {
 
             {/* 🎯 Main title */}
             <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-serif text-yellow-900 mb-4">
-              Rangpreet <br /> Haldi
+              Rangpreet <br /> (Haldi)
             </h2>
 
             {/* ⏰ Time pill */}
             <div className="mb-4">
               <span className="inline-block px-3 py-1 rounded-full bg-yellow-200/60 text-yellow-900 text-xs font-medium">
-                10:00 AM
+                10:30 AM
               </span>
             </div>
 
