@@ -1,9 +1,19 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
 export default function IntroOverlay({ onFinish, onStartMusic }) {
   const videoRef = useRef(null);
   const [started, setStarted] = useState(false);
+  const [introDone, setIntroDone] = useState(false);
+  //Scroll lock
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   useEffect(() => {
     if (!started) return;
 
@@ -22,6 +32,12 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
 
     const handleEnded = () => {
       setTimeout(() => {
+        document.body.style.overflow = "auto";
+
+        document.getElementById("hero")?.scrollIntoView({
+          behavior: "smooth",
+        });
+
         onFinish?.();
       }, 500); //  gives hero time to breathe
     };

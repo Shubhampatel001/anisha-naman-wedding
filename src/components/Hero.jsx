@@ -2,7 +2,10 @@ import { motion } from "framer-motion";
 
 export default function Hero({ data }) {
   return (
-    <section className="relative min-h-[100svh] flex items-end md:items-center justify-center overflow-hidden bg-ivory pb-28 md:pb-0 ">
+    <section
+      id="hero"
+      className="relative min-h-[100svh] flex items-end md:items-center justify-center overflow-hidden bg-ivory pb-28 md:pb-0 "
+    >
       {/* ===== Background Image Wrapper ===== */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 scale-[1.18] md:scale-100 transform-gpu">
