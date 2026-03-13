@@ -24,25 +24,18 @@ export default function RSVP() {
 
   const handleSubmit = () => {
     setSubmitted(true);
-    toast.custom((t) => (
-      <div
-        className={`
-          px-6 py-4 rounded-xl shadow-lg
-          bg-[#FFF9F5] border border-[#F0D9C8]
-          text-gray-700
-          font-medium
-          ${t.visible ? "animate-enter" : "animate-leave"}
-        `}
-      >
-        ✨ RSVP received — see you at the wedding!
-      </div>
-    ));
+
+    if (attendance === "Yes, happily!") {
+      toast.success("RSVP confirmed — see you at the wedding! 🎉");
+    } else {
+      toast("Thanks for letting us know. We'll miss you! 💛");
+    }
   };
 
   return (
     <section
       id="rsvp"
-      className="relative py-28 -mt-px bg-gradient-to-b from-[#FFF8F3] via-[#F8EFE9] to-[#F5F0EA] overflow-hidden"
+      className="relative py-28 -mt-px bg-gradient-to-b from-[#FFF8F3] via-[#F7EEE7] to-[#F5F0EA] overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#FFF8F3] to-transparent pointer-events-none" />
       {/* Background Glow */}
@@ -69,14 +62,18 @@ export default function RSVP() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center py-6 space-y-4"
+            className="text-center py-10 space-y-4"
           >
             <p className="text-lg font-medium text-gray-800">
-              Thank you for your response 💛
+              {attendance === "Yes, happily!"
+                ? "Yay! We’re excited to celebrate with you 🎉"
+                : "We’ll miss you, but thank you for letting us know 💛"}
             </p>
 
             <p className="text-sm text-gray-600">
-              We can’t wait to celebrate together
+              {attendance === "Yes, happily!"
+                ? "Your presence will make our day even more special."
+                : "Sending love and warm wishes until we meet again."}
             </p>
 
             {/* divider */}
@@ -235,7 +232,7 @@ export default function RSVP() {
               {/* MESSAGE */}
               <textarea
                 name="entry.27778586"
-                placeholder="Leave a note for us..."
+                placeholder="Leave a note for the host...(optional)"
                 rows="3"
                 className="w-full px-4 py-3 rounded-xl bg-[#FFF9F5] border border-[#F0D9C8] text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-300"
               />

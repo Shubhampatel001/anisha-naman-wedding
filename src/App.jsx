@@ -30,16 +30,22 @@ export default function App() {
     <>
       <Toaster
         position="top-center"
+        containerStyle={{
+          top: 95, // pushes it down so it doesn't hug the browser edge
+        }}
         toastOptions={{
-          duration: 3500,
+          duration: 3600,
           style: {
             background: "#FFF9F5",
-            color: "#3A3A3A",
-            border: "1px solid #F0D9C8",
-            padding: "14px 18px",
-            borderRadius: "14px",
+            color: "#4A4A4A",
+            border: "1px solid rgba(214,178,142,0.35)",
+            padding: "14px 20px",
+            borderRadius: "18px",
             fontSize: "14px",
-            boxShadow: "0 8px 30px rgba(0,0,0,0.08)",
+            fontWeight: "500",
+            letterSpacing: "0.2px",
+            backdropFilter: "blur(6px)",
+            boxShadow: "0 14px 40px rgba(140,100,60,0.12)",
           },
         }}
       />
