@@ -224,7 +224,7 @@ export default function SangeetSection() {
       shadow-sm
     "
               >
-                Glitz, Glam & Shimmer Attire
+                Attire: Glitz, Glam & Shimmer
               </span>
             </div>
           </motion.div>

@@ -89,12 +89,12 @@ w-[220px]
         animate={{ opacity: [0.4, 0.7, 0.4] }}
         transition={{ duration: 1.4, repeat: Infinity }}
         className="
-  absolute bottom-16 left-1/2 -translate-x-1/2
-  w-[120px] h-[70px]
-  bg-orange-400/40
-  rounded-full
-  blur-xl
-"
+          absolute bottom-16 left-1/2 -translate-x-1/2
+          w-[120px] h-[70px]
+          bg-orange-400/40
+          rounded-full
+          blur-xl
+        "
       />
       {/* 🔥 sacred fire glow */}
       <motion.div
@@ -220,7 +220,7 @@ w-[220px]
     ring-1 ring-orange-200/50
   "
               >
-                Classic Ethnic Attire
+                Attire: Classic Ethnic
               </span>
             </div>
           </motion.div>

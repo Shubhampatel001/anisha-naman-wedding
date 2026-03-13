@@ -209,7 +209,7 @@ export default function MehendiSection() {
                   ring-1 ring-green-200/50
                 "
               >
-                Shades of Emerald Attire
+                Attire: Shades of Emerald
               </span>
             </div>
           </motion.div>

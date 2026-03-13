@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Footer({ data }) {
   return (
-    <footer className="py-20 bg-[#F5F0EA] text-center">
+    <footer id="footer" className="py-20 bg-[#F5F0EA] text-center">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

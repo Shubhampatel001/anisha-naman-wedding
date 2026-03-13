@@ -217,7 +217,7 @@ export default function HaldiSection() {
 
               {/* Dress code */}
               <span className="px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 text-sm font-medium">
-                Sunshine Yellow Attire
+                Attire: Sunshine Yellow
               </span>
             </div>
           </motion.div>

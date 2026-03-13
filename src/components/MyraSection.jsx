@@ -150,16 +150,16 @@ shadow-[0_0_12px_rgba(255,180,220,0.8)]
               {/* Dress code */}
               <span
                 className="
-    px-4 py-2
-    rounded-full
-    bg-pink-100
-    text-pink-800
-    text-sm font-medium
-    shadow-sm
-    ring-1 ring-pink-200/50
-  "
+                  px-4 py-2
+                  rounded-full
+                  bg-pink-100
+                  text-pink-800
+                  text-sm font-medium
+                  shadow-sm
+                  ring-1 ring-pink-200/50
+                "
               >
-                Blush & Pastel Palette Attire
+                Attire: Blush & Pastel Palette
               </span>
             </div>
           </motion.div>

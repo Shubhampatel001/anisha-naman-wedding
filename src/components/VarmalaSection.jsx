@@ -166,16 +166,16 @@ export default function VarmalaSection() {
               {/* Attire */}
               <span
                 className="
-      px-4 py-2
-      rounded-full
-      bg-rose-100
-      text-rose-800
-      text-sm font-medium
-      ring-1 ring-rose-200/70
-      shadow-sm
-    "
+                px-4 py-2
+                rounded-full
+                bg-rose-100
+                text-rose-800
+                text-sm font-medium
+                ring-1 ring-rose-200/70
+                shadow-sm
+              "
               >
-                Traditional Elegance Attire
+                Attire: Traditional Elegance
               </span>
             </div>
           </motion.div>

@@ -18,6 +18,7 @@ import PheraSection from "./components/PheraSection";
 import SangeetSection from "./components/SangeetSection";
 import VarmalaSection from "./components/VarmalaSection";
 import BackToTimeline from "./components/BackToTimeline";
+import BackToTop from "./components/BackToTop";
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -77,6 +78,7 @@ export default function App() {
       <RSVP />
 
       <Footer data={data} />
+      <BackToTop />
     </>
   );
 }
