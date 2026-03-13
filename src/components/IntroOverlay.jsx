@@ -4,6 +4,7 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
   const videoRef = useRef(null);
   const [started, setStarted] = useState(false);
   const [introDone, setIntroDone] = useState(false);
+  const [fadeVideo, setFadeVideo] = useState(false);
   //Scroll lock
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,7 +20,15 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
 
     const video = videoRef.current;
     if (!video) return;
+    const handleTimeUpdate = () => {
+      if (!video.duration) return;
 
+      const remaining = video.duration - video.currentTime;
+
+      if (remaining < 0.7 && !fadeVideo) {
+        setFadeVideo(true);
+      }
+    };
     const playVideo = async () => {
       try {
         await video.play();
@@ -42,10 +51,11 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
       }, 500); //  gives hero time to breathe
     };
     video.addEventListener("ended", handleEnded);
-
+    video.addEventListener("timeupdate", handleTimeUpdate);
     return () => {
       clearTimeout(timer);
       video.removeEventListener("ended", handleEnded);
+      video.removeEventListener("timeupdate", handleTimeUpdate);
     };
   }, [started, onFinish]);
   const handleStart = () => {
@@ -57,13 +67,16 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[100] overflow-hidden bg-[#F5F0E8]"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
+      className="fixed inset-0 z-[100] overflow-hidden"
+      initial={{ opacity: 1, backgroundColor: "#F5F0E8" }}
+      animate={{
+        opacity: 1,
+        backgroundColor: fadeVideo ? "rgba(245,240,232,0)" : "#F5F0E8",
+      }}
       exit={{ opacity: 0 }}
       transition={{
-        duration: 1.1,
-        ease: [0.22, 1, 0.36, 1],
+        opacity: { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
+        backgroundColor: { duration: 0.7, ease: "easeOut" },
       }}
     >
       {/* ================= VIDEO ================= */}
@@ -78,28 +91,27 @@ export default function IntroOverlay({ onFinish, onStartMusic }) {
           <motion.div
             key="video"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            animate={{ opacity: fadeVideo ? 0 : 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             exit={{ opacity: 0 }}
             className="absolute inset-0"
           >
-            <div className="absolute inset-0 flex items-center justify-center bg-[#F5F0E8]">
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center bg-[#F5F0E8]"
+              animate={{ opacity: fadeVideo ? 0 : 1 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
               <video
                 ref={videoRef}
                 muted
                 playsInline
                 preload="auto"
-                // poster="/intro-logo-r.png"
-                className="
-                    w-full
-                    h-full
-                    object-cover
-                    "
+                className="w-full h-full object-cover"
               >
                 <source src="/intro-logo.webm" type="video/webm" />
                 <source src="/intro-logo.mp4" type="video/mp4" />
               </video>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
