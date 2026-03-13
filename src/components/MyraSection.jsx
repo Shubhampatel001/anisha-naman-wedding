@@ -4,24 +4,40 @@ export default function MyraSection() {
   return (
     <section
       id="myra"
-      className="relative py-24 md:py-32 bg-[#FFF6FB] overflow-hidden"
+      className="relative py-24 md:py-32 bg-gradient-to-b from-[#FFF6FB] via-[#FFF0F7] to-[#FFE6F2] overflow-hidden"
     >
       {/* soft pink aura */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-pink-200/25 rounded-full blur-[110px]" />
       </div>
-      {[...Array(10)].map((_, i) => (
-        <motion.span
-          key={i}
-          animate={{ y: [0, -25, 0], rotate: [0, 180] }}
-          transition={{ duration: 6 + i, repeat: Infinity }}
-          className="absolute w-[4px] h-[4px] bg-pink-300 rounded-full"
-          style={{
-            left: `${15 + i * 18}%`,
-            top: `${25 + (i % 2) * 25}%`,
-          }}
-        />
-      ))}
+      {[...Array(16)].map((_, i) => {
+        const size = 2 + Math.random() * 5;
+        return (
+          <motion.span
+            key={i}
+            animate={{
+              y: [0, -40 - Math.random() * 30, 0],
+              x: [0, i % 2 ? 15 : -15, 0],
+              rotate: [0, 180],
+              opacity: [0.2, 0.8, 0.2],
+              scale: [0.8, 1.2, 0.8],
+            }}
+            transition={{
+              duration: 6 + Math.random() * 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute rounded-full bg-pink-300"
+            style={{
+              width: size,
+              height: size,
+              left: `${10 + Math.random() * 80}%`,
+              top: `${20 + Math.random() * 60}%`,
+              filter: `blur(${Math.random() * 1}px)`,
+            }}
+          />
+        );
+      })}
       {/* ✨ premium sparkle */}
       <motion.span
         animate={{
@@ -32,7 +48,8 @@ export default function MyraSection() {
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         className="
     absolute right-[18%] top-[30%]
-    w-2.5 h-2.5 bg-pink-300 rounded-full
+    w-3 h-3 bg-gradient-to-br from-white to-pink-300 rounded-full
+shadow-[0_0_12px_rgba(255,180,220,0.8)]
     blur-[0.3px]
   "
       />

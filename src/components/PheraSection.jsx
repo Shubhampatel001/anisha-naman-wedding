@@ -4,7 +4,7 @@ export default function PheraSection() {
   return (
     <section
       id="phera"
-      className="relative py-24 md:py-32 overflow-hidden bg-[#FFF8F3]"
+      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-[#FFF8F3] via-[#FFEDE0] to-[#FFF5ED]"
     >
       {/* warm sacred aura */}
       <div className="absolute inset-0 pointer-events-none">
@@ -21,6 +21,7 @@ export default function PheraSection() {
         transition={{ duration: 2.2, repeat: Infinity }}
         className="
     absolute bottom-16 left-1/2 -translate-x-1/2
+w-[220px]
     w-64 h-40 bg-orange-300/30 rounded-full blur-3xl
     pointer-events-none
   "
@@ -44,27 +45,57 @@ export default function PheraSection() {
       </div>
       {/* 🔥 warm havan particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(10)].map((_, i) => (
-          <motion.span
-            key={i}
-            animate={{
-              y: [0, -100],
-              opacity: [0, 0.8, 0],
-            }}
-            transition={{
-              duration: 3 + i * 0.4,
-              repeat: Infinity,
-              ease: "easeOut",
-              delay: i * 0.3,
-            }}
-            className="absolute w-1 h-1 bg-orange-300 rounded-full"
-            style={{
-              left: `${40 + (i - 2) * 6}%`,
-              bottom: "20%",
-            }}
-          />
-        ))}
+        {[...Array(12)].map((_, i) => {
+          const size = 1 + Math.random() * 2;
+          return (
+            <motion.span
+              key={i}
+              animate={{
+                y: [0, -80 - Math.random() * 60],
+                opacity: [0.7, 0],
+                scale: [0.8, 1.2],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                ease: "easeOut",
+                delay: i * 0.4,
+              }}
+              className="absolute bg-orange-400 rounded-full"
+              style={{
+                width: size,
+                height: size,
+                left: `${48 + Math.random() * 4}%`,
+                bottom: "70px",
+                filter: `blur(${Math.random() * 0.6}px)`,
+              }}
+            />
+          );
+        })}
       </div>
+      <motion.div
+        animate={{ opacity: [0.25, 0.45, 0.25] }}
+        transition={{ duration: 3, repeat: Infinity }}
+        className="
+    absolute bottom-20 left-1/2 -translate-x-1/2
+    w-[320px] h-[180px]
+    bg-orange-300/20
+    rounded-full
+    blur-[100px]
+    pointer-events-none
+  "
+      />
+      <motion.div
+        animate={{ opacity: [0.4, 0.7, 0.4] }}
+        transition={{ duration: 1.4, repeat: Infinity }}
+        className="
+  absolute bottom-16 left-1/2 -translate-x-1/2
+  w-[120px] h-[70px]
+  bg-orange-400/40
+  rounded-full
+  blur-xl
+"
+      />
       {/* 🔥 sacred fire glow */}
       <motion.div
         animate={{

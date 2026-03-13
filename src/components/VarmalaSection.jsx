@@ -4,7 +4,7 @@ export default function VarmalaSection() {
   return (
     <section
       id="varmala"
-      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-[#FDF7F7] to-[#FFF8F3]"
+      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-[#FDF7F7] via-[#FFF2F2] to-[#FFF8F3]"
     >
       {/* 🌸 soft romantic aura */}
       <div className="absolute inset-0 pointer-events-none">
@@ -15,14 +15,14 @@ export default function VarmalaSection() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* 🌸 premium falling petals */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {[...Array(15)].map((_, i) => (
+            {[...Array(18)].map((_, i) => (
               <motion.div
                 key={`petal-${i}`}
                 initial={{ y: -60, opacity: 0 }}
                 animate={{
                   y: [-40, 600],
-                  x: [0, i % 2 ? 20 : -20],
-                  rotate: [0, 140],
+                  x: [0, i % 2 ? 40 : -40, 10],
+                  rotate: [0, 180, 360],
                   opacity: [0, 0.9, 0],
                 }}
                 transition={{
@@ -37,11 +37,11 @@ export default function VarmalaSection() {
                 {/* petal shape */}
                 <div
                   className="
-          w-[10px] h-[14px]
-          bg-rose-300/80
-          rounded-[60%_40%_60%_40%]
-          blur-[0.2px]
-        "
+                    w-[10px] h-[14px]
+                    bg-rose-300/80
+                    rounded-[60%_40%_60%_40%]
+                    blur-[0.2px]
+                  "
                 />
               </motion.div>
             ))}
