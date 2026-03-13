@@ -2,15 +2,19 @@ import { motion } from "framer-motion";
 
 export default function Hero({ data }) {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-ivory">
+    <section className="relative min-h-[100svh] flex items-end md:items-center justify-center overflow-hidden bg-ivory pb-28 md:pb-0 ">
       {/* ===== Background Image Wrapper ===== */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 scale-[1.15] md:scale-100 transform-gpu">
+        <div className="absolute inset-0 scale-[1.05] md:scale-100 transform-gpu">
           <img
-            src="/A.png"
+            src="/hero.webp"
             alt="Naman and Anisha"
-            className="absolute inset-0 w-full h-full object-cover object-[35%]"
-            loading="eager"
+            className="
+            absolute inset-0 w-full h-full object-cover
+            object-[52%_30%]
+            md:object-[52%_10%]
+            lg:object-top
+            "
           />
         </div>
 
@@ -98,9 +102,9 @@ export default function Hero({ data }) {
         "
       >
         {/* Text */}
-        <small className="text-[10px] tracking-[0.38em] uppercase text-white/70">
+        {/* <small className="text-[10px] tracking-[0.38em] uppercase text-white/70">
           click
-        </small>
+        </small> */}
         {/* Arrow circle */}
         <motion.div
           animate={{ y: [0, 6, 0] }}
