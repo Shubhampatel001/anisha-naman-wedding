@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FaMusic, FaPause } from "react-icons/fa";
-import music from "../assets/intro-music1.mp3";
+import music from "../assets/intro-music2.m4a";
 
 export default function MusicButton({ audioRef }) {
   const [playing, setPlaying] = useState(false);
