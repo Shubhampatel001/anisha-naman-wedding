@@ -204,7 +204,7 @@ export default function FunctionHeading() {
                     <motion.img
                       src={fn.icon}
                       alt={fn.label}
-                      className="w-[48px] h-[48px] object-contain drop-shadow-lg"
+                      className="w-[48px] h-[48px] object-contain drop-shadow-lg will-change-transform"
                       animate={{
                         rotate: [0, 3, -3, 0],
                       }}
