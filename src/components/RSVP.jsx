@@ -35,7 +35,7 @@ export default function RSVP() {
   return (
     <section
       id="rsvp"
-      className="relative py-28 -mt-px bg-gradient-to-b from-[#FFF8F3] via-[#F7EEE7] to-[#F5F0EA] overflow-hidden"
+      className="relative py-28 -mt-px bg-gradient-to-b from-[#F7EEE7] via-[#F5F0EA] to-[#F5F0EA] overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#FFF8F3] to-transparent pointer-events-none" />
       {/* Background Glow */}
@@ -48,7 +48,7 @@ export default function RSVP() {
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-serif text-gray-800 mb-2"
+          className="text-3xl md:text-4xl font-serif text-[#4B3A2F] tracking-wide mb-2"
         >
           RSVP
         </motion.h2>
@@ -59,29 +59,16 @@ export default function RSVP() {
 
         {submitted ? (
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center py-10 space-y-4"
+            initial={{ opacity: 0, y: 20, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="text-center py-12"
           >
-            <p className="text-lg font-medium text-gray-800">
+            <p className="text-lg md:text-xl font-serif text-[#4B3A2F]">
               {attendance === "Yes, happily!"
-                ? "Yay! We’re excited to celebrate with you 🎉"
-                : "We’ll miss you, but thank you for letting us know 💛"}
+                ? "We can't wait to celebrate with you ✨"
+                : "Your presence will be missed 💛"}
             </p>
-
-            <p className="text-sm text-gray-600">
-              {attendance === "Yes, happily!"
-                ? "Your presence will make our day even more special."
-                : "Sending love and warm wishes until we meet again."}
-            </p>
-
-            {/* divider */}
-            <div className="flex items-center justify-center gap-4 pt-4">
-              <span className="w-10 h-px bg-amber-300/40" />
-              <span className="text-amber-500 text-sm">❤️</span>
-              <span className="w-10 h-px bg-amber-300/40" />
-            </div>
           </motion.div>
         ) : (
           <>
