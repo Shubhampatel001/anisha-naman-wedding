@@ -52,7 +52,7 @@ function FlipDigit({ value }) {
             block
             text-4xl sm:text-5xl md:text-6xl
             font-serif font-semibold
-            text-white
+            text-[#3B2F2F]
             tracking-tight
           "
         >
@@ -75,8 +75,11 @@ export default function Countdown() {
   return (
     <section
       id="countdown"
-      className="relative py-28 bg-[#9FB4C7] text-white text-center overflow-hidden"
+      className="relative py-28 bg-gradient-to-b from-[#FDF6EE] via-[#F6EDE4] to-[#F5F0EA] text-[#3B2F2F] text-center overflow-hidden"
     >
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-amber-200/20 blur-[120px] rounded-full" />
+      </div>
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 16 }}
@@ -85,7 +88,7 @@ export default function Countdown() {
         transition={{ duration: 1, ease: "easeOut" }}
         className="text-3xl md:text-4xl font-serif text-primary mb-12 text-center"
       >
-        Counting down to forever
+        Countdown to forever
       </motion.h2>
 
       {/* Countdown */}
@@ -105,7 +108,7 @@ export default function Countdown() {
           <motion.div
             key={label}
             variants={card}
-            className="relative flex-1 basis-0 min-w-0 bg-white/10 backdrop-blur-xl border border-white/20 px-4 sm:px-8 py-6 sm:py-7 rounded-2xl"
+            className="relative flex-1 basis-0 min-w-0 bg-white/60 backdrop-blur-xl border border-white/20 px-4 sm:px-8 py-6 sm:py-7 rounded-2xl"
           >
             {/* Animated number */}
             <div className="flex justify-center">
@@ -126,7 +129,7 @@ export default function Countdown() {
             </div> */}
 
             {/* Label */}
-            <div className="uppercase text-[11px] tracking-[0.25em] mt-2 text-white/80">
+            <div className="uppercase text-[11px] tracking-[0.25em] mt-2 text-[#6B5E55]">
               {label}
             </div>
           </motion.div>
