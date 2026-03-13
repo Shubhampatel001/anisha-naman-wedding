@@ -5,7 +5,7 @@ export default function Hero({ data }) {
     <section className="relative min-h-[100svh] flex items-end md:items-center justify-center overflow-hidden bg-ivory pb-28 md:pb-0 ">
       {/* ===== Background Image Wrapper ===== */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 scale-[1.05] md:scale-100 transform-gpu">
+        <div className="absolute inset-0 scale-[1.18] md:scale-100 transform-gpu">
           <img
             src="/hero.webp"
             alt="Naman and Anisha"
